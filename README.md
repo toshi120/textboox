@@ -1,24 +1,67 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## students テーブル
 
-Things you may want to cover:
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- | 
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :student_books
 
-* Configuration
 
-* Database creation
+## teachers テーブル
 
-* Database initialization
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- | 
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- has_many :textbooks
 
-* Deployment instructions
 
-* ...
+## textbooks テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ | 
+| name    | string     | null: false                    |
+| note    | text       |                                |
+| teacher | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :teacher
+- has_many :student_books
+
+
+## student_books テーブル
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ | 
+| student  | references | null: false, foreign_key: true |
+| textbook | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :student
+- belongs_to :textbook
+- has_one :progress
+
+
+## progress テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ | 
+| page          | integer    | null: false                    |
+| student_books | references | null: false, foreign_key: true |
+| comment       | text       |                                |
+
+### Association
+
+- belongs_to student_book
