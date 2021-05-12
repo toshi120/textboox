@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_05_12_080744) do
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
+    t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_080744) do
   end
 
   create_table "teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
+    t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
