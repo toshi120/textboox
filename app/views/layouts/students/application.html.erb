@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Textboox</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Teachers</h1>
+    <% if student_signed_in? %>
+      <%= "LogOnUser: #{current_student.email}" %>
+      <%= link_to 'SignOut', destroy_student_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'SignUp', new_student_registration_path %>
+      <%= link_to 'Sigin', new_student_session_path %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
