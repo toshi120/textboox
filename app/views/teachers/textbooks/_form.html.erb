@@ -1,4 +1,4 @@
-<%= form_with(model: teachers_textbook, local: true) do |form| %>
+<%= form_with(model: [:teachers,@teachers_textbook], local: true) do |form| %>
   <% if teachers_textbook.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(teachers_textbook.errors.count, "error") %> prohibited this teachers_textbook from being saved:</h2>
