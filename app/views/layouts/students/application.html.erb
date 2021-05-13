@@ -10,9 +10,9 @@
   </head>
 
   <body>
-    <h1>Teachers</h1>
+    <h1>Students</h1>
     <% if student_signed_in? %>
-      <%= "LogOnUser: #{current_student.email}" %>
+      <%= "LogOnUser: #{current_student.name}" %>
       <%= link_to 'SignOut', destroy_student_session_path, method: :delete %>
     <% else %>
       <%= link_to 'SignUp', new_student_registration_path %>
