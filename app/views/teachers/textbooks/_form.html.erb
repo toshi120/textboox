@@ -1,0 +1,17 @@
+<%= form_with(model: teachers_textbook, local: true) do |form| %>
+  <% if teachers_textbook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(teachers_textbook.errors.count, "error") %> prohibited this teachers_textbook from being saved:</h2>
+
+      <ul>
+        <% teachers_textbook.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
