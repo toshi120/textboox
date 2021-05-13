@@ -33,6 +33,7 @@
 | name    | string     | null: false                    |
 | note    | text       |                                |
 | teacher | references | null: false, foreign_key: true |
+| page    | integer    | null: false
 
 ### Association
 
