@@ -10,13 +10,13 @@
   </head>
 
   <body>
-    <h1>Teachers</h1>
-    <% if teacher_signed_in? %>
-      <%= "お疲れ様です！ #{current_teacher.name} 先生" %>
-      <%= link_to 'SignOut', destroy_teacher_session_path, method: :delete %>
+    <h1>Students</h1>
+    <% if student_signed_in? %>
+      <%= "LogOnUser: #{current_student.name}" %>
+      <%= link_to 'SignOut', destroy_student_session_path, method: :delete %>
     <% else %>
-      <%= link_to 'SignUp', new_teacher_registration_path %>
-      <%= link_to 'Sigin', new_teacher_session_path %>
+      <%= link_to 'SignUp', new_student_registration_path %>
+      <%= link_to 'Sigin', new_student_session_path %>
     <% end %>
     <%= yield %>
   </body>

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Students Textbooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students_textbooks.each do |students_textbook| %>
+      <tr>
+        <td><%= students_textbook.name %>
+        <td><%= link_to 'Show', students_textbook %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
