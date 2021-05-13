@@ -22,6 +22,7 @@ class Teachers::TextbooksController < Teachers::ApplicationController
   # POST /teachers/textbooks or /teachers/textbooks.json
   def create
     @teachers_textbook = Textbook.new(teachers_textbook_params)
+    
 
     respond_to do |format|
       if @teachers_textbook.save
@@ -64,6 +65,7 @@ class Teachers::TextbooksController < Teachers::ApplicationController
 
     # Only allow a list of trusted parameters through.
     def teachers_textbook_params
-      params.fetch(:teachers_textbook, {})
+      # params.fetch(:teachers_textbook, {})
+      params.require(:textbook).permit(:name, :note, :page).merge(teacher_id: current_teacher.id)
     end
 end
