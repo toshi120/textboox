@@ -1,7 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Teachers Textbooks</h1>
+  <div class='item-contents'>
+    <h2 class='title'>テキスト一覧</h2>
+    <%= link_to '新規テキスト', "#", class: "subtitle" %>
+    <ul class='item-lists'>
+      <% @teachers_textbooks.each do |teachers_textbook| %>
+      <li class='list'>
+        <%= link_to [:teachers, teachers_textbook] do %>
+        <div class='item-img-content'>
+          <%= image_tag teachers_textbook.image, class: "item-img" %>
 
+
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= teachers_textbook.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= teachers_textbook.page %>ページ</span>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
 <table>
   <thead>
     <tr>
