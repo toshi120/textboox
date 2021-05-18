@@ -66,6 +66,6 @@ class Teachers::TextbooksController < Teachers::ApplicationController
     # Only allow a list of trusted parameters through.
     def teachers_textbook_params
       # params.fetch(:teachers_textbook, {})
-      params.require(:textbook).permit(:name, :note, :page).merge(teacher_id: current_teacher.id)
+      params.require(:textbook).permit(:name, :note, :page, :image).merge(teacher_id: current_teacher.id)
     end
 end
