@@ -3,7 +3,7 @@ class Students::TextbooksController < Students::ApplicationController
 
   # GET /students/textbooks or /students/textbooks.json
   def index
-    @students_textbooks = Textbook.all
+    @teachers_textbooks = Textbook.all
   end
 
   # GET /students/textbooks/1 or /students/textbooks/1.json

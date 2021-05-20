@@ -1,4 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_students_textbook_path(@students_textbook) %> |
+<div class="textbook-show">
+  <div class="textbook-box">
+    <h2 class="name">
+      <%= @students_textbook.name %>
+    </h2>
+    <div class="textbook-img-content">
+      <%= image_tag @students_textbook.image ,class:"textbook-box-img" %>
+    </div>
+    <div class="textbook-page-box">
+      <span class="textbook-page">
+        <%= @students_textbook.page %>ページ
+      </span>
+      <span class="textbook-postage">
+        <%= @students_textbook.note %>
+      </span>
+    </div>
+
+
+
+<%# <%= link_to 'Edit', edit_students_textbook_path(@students_textbook) %> | %>
 <%= link_to 'Back', students_textbooks_path %>
