@@ -1,0 +1,2 @@
+class StudentsTextbook < ApplicationRecord
+end

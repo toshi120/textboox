@@ -20,19 +20,19 @@ class Students::TextbooksController < Students::ApplicationController
   # end
 
   # POST /students/textbooks or /students/textbooks.json
-  # def create
-  #   @students_textbook = Students::Textbook.new(students_textbook_params)
+  def create
+    @students_textbook = Students::Textbook.new(students_textbook_params)
 
-  #   respond_to do |format|
-  #     if @students_textbook.save
-  #       format.html { redirect_to @students_textbook, notice: "Textbook was successfully created." }
-  #       format.json { render :show, status: :created, location: @students_textbook }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @students_textbook.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @students_textbook.save
+        format.html { redirect_to @students_textbook, notice: "Textbook was successfully created." }
+        format.json { render :show, status: :created, location: @students_textbook }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @students_textbook.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # PATCH/PUT /students/textbooks/1 or /students/textbooks/1.json
   # def update
@@ -48,13 +48,13 @@ class Students::TextbooksController < Students::ApplicationController
   # end
 
   # DELETE /students/textbooks/1 or /students/textbooks/1.json
-  # def destroy
-  #   @students_textbook.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to students_textbooks_url, notice: "Textbook was successfully destroyed." }
-  #     format.json { head :no_content }
-  #   end
-  # end
+  def destroy
+    @students_textbook.destroy
+    respond_to do |format|
+      format.html { redirect_to students_textbooks_url, notice: "Textbook was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
