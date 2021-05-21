@@ -24,4 +24,6 @@ class Students::StudentsTextbooksController < Students::ApplicationController
     def set_textbook
       @textbook = Textbook.find(params[:textbook_id])
     end
+    
+    
 end

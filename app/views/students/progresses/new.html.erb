@@ -1,21 +1,21 @@
  <div class="items-sell-main">
     <h2 class="items-sell-title">参考書の情報を入力</h2>
-    <%= form_with(model: [:students, @teachers_textbook], local: true) do |f| %>
+    <%= form_with(model: [:students, @textbook, @found_recode, @progress], local: true) do |f| %>
     
     <%# /出品画像 %>
     <%# 商品名と商品説明 %>
 
     <div class="new-items">
       <div class="weight-bold-text">
-        参考書名
+        進んだページ
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :progress_page, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
-          参考書の説明
+          気になったこと、わからなかったこと
         </div>
-        <%= f.text_area :note, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :comment, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
   
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "参考書を追加する" ,class:"sell-btn" %>
+      <%= f.submit "進捗の記録を保存する" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
