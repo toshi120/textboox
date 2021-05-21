@@ -6,18 +6,18 @@
     <h2 class='title'>テキスト一覧</h2>
     <%= link_to '新規テキスト', "#", class: "subtitle" %>
     <ul class='item-lists'>
-      <% @teachers_textbooks.each do |teachers_textbook| %>
+      <% @textbooks.each do |textbook| %>
       <li class='list'>
-        <%= link_to [:students, teachers_textbook] do %>
+        <%= link_to [:students, textbook] do %>
         <div class='item-img-content'>
-          <%= image_tag teachers_textbook.image, class: "item-img" %>
+          <%= image_tag textbook.image, class: "item-img" %>
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= teachers_textbook.name %>
+            <%= textbook.name %>
           </h3>
           <div class='item-price'>
-            <span><%= teachers_textbook.page %>ページ</span>
+            <span><%= textbook.page %>ページ</span>
           </div>
         </div>
         <% end %>
@@ -32,10 +32,10 @@
   </thead>
 
   <tbody>
-    <% @teachers_textbooks.each do |teachers_textbook| %>
+    <% @textbooks.each do |textbook| %>
       <tr>
-        <td><%= teachers_textbook.name %>
-        <td><%= link_to 'Show', [:teachers, teachers_textbook] %></td>
+        <td><%= textbook.name %>
+        <td><%= link_to 'Show', [:students, textbook] %></td>
       </tr>
     <% end %>
   </tbody>

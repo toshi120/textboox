@@ -1,13 +1,14 @@
 class Students::TextbooksController < Students::ApplicationController
-  before_action :set_students_textbook, only: [:show]
+  before_action :set_textbook, only: [:show]
 
   # GET /students/textbooks or /students/textbooks.json
   def index
-    @teachers_textbooks = Textbook.all
+    @textbooks = Textbook.all
   end
 
   # GET /students/textbooks/1 or /students/textbooks/1.json
   def show
+    @found_recode = StudentsTextbook.where(student_id: current_student.id).where(textbook_id: @textbook.id)
   end
 
   # GET /students/textbooks/new
@@ -20,19 +21,19 @@ class Students::TextbooksController < Students::ApplicationController
   # end
 
   # POST /students/textbooks or /students/textbooks.json
-  def create
-    @students_textbook = Students::Textbook.new(students_textbook_params)
+  # def create
+  #   @students_textbook = StudentsTextbook.new(students_textbook_params)
 
-    respond_to do |format|
-      if @students_textbook.save
-        format.html { redirect_to @students_textbook, notice: "Textbook was successfully created." }
-        format.json { render :show, status: :created, location: @students_textbook }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @students_textbook.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @students_textbook.save
+  #       format.html { redirect_to @students_textbook, notice: "Textbook was successfully created." }
+  #       format.json { render :show, status: :created, location: @students_textbook }
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @students_textbook.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /students/textbooks/1 or /students/textbooks/1.json
   # def update
@@ -48,22 +49,26 @@ class Students::TextbooksController < Students::ApplicationController
   # end
 
   # DELETE /students/textbooks/1 or /students/textbooks/1.json
-  def destroy
-    @students_textbook.destroy
-    respond_to do |format|
-      format.html { redirect_to students_textbooks_url, notice: "Textbook was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @students_textbook.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to students_textbooks_url, notice: "Textbook was successfully destroyed." }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_students_textbook
-      @students_textbook = Textbook.find(params[:id])
+    def set_textbook
+      @textbook = Textbook.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # def set_students_textbook
+    #   @students_textbook = StudentsTextbook.new(students_textbook_params)
+    # end
+
+    # # Only allow a list of trusted parameters through.
     # def students_textbook_params
-    #   params.fetch(:students_textbook, {})
+    #   params.permit().merge(student_id: current_student.id, textbook_id: @textbook.id)
     # end
 end

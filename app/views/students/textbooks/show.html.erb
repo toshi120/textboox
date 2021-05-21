@@ -3,21 +3,31 @@
 <div class="textbook-show">
   <div class="textbook-box">
     <h2 class="name">
-      <%= @students_textbook.name %>
+      <%= @textbook.name %>
     </h2>
     <div class="textbook-img-content">
-      <%= image_tag @students_textbook.image ,class:"textbook-box-img" %>
+      <%= image_tag @textbook.image ,class:"textbook-box-img" %>
     </div>
     <div class="textbook-page-box">
       <span class="textbook-page">
-        <%= @students_textbook.page %>ページ
+        <%= @textbook.page %>ページ
       </span>
       <span class="textbook-postage">
-        <%= @students_textbook.note %>
+        <%= @textbook.note %>
       </span>
     </div>
 
+<% if student_signed_in? %>
+  <% if @textbook.students_textbooks.exists?(@found_recode) %>
+    <%= link_to "このテキストの学習をやめる", students_textbook_students_textbook_path(@textbook), method: :delete %>
+    <%= link_to "進捗を記録する" %>
+  <% else %>
+    <%# コントローラ記述したらパスをdestroyに変更 %>
+    <%= link_to "このテキストの学習を始める", students_textbook_students_textbooks_path(@textbook), method: :post %>
+  <% end %>
+<% end %>
 
 
-<%# <%= link_to 'Edit', edit_students_textbook_path(@students_textbook) | %> %>
+
+<%# <%= link_to 'Edit', edit_students_textbook_path(@students_textbook) | %>
 <%= link_to 'Back', students_textbooks_path %>

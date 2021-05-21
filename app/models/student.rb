@@ -1,4 +1,6 @@
 class Student < ApplicationRecord
+  has_many :students_textbooks
+  has_many :textbooks, through: :students_textbooks
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

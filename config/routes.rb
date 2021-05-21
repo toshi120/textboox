@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :students do
-    resources :textbooks
+    resources :textbooks, only: [:index, :show] do
+      resources :students_textbooks, only: [:create, :destroy]
+    end
   end
   namespace :teachers do
     resources :textbooks
