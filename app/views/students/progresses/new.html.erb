@@ -10,28 +10,12 @@
         進んだページ
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :progress_page, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :progress_page, class:"items-text", id:"item-name", maxlength:"40" %>ページ
       <div class="items-explain">
         <div class="weight-bold-text">
           気になったこと、わからなかったこと
         </div>
-        <%= f.text_area :comment, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
-      </div>
-    </div>
-
-    <div class="sell-price">
-      <div class="weight-bold-text question-text">
-        <span>全ページ数</span>
-      </div>
-      <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>ページ</span>
-            <span class="indispensable">必須</span>
-          </div>
-          <span class="sell-yen">P</span>
-          <%= f.text_field :page, class:"price-input", id:"item-price", placeholder:"例）300" %>
-        </div>
+        <%= f.text_area :comment, class:"items-text", id:"item-info", rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
 
