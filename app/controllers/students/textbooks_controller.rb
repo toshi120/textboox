@@ -8,7 +8,7 @@ class Students::TextbooksController < Students::ApplicationController
 
   # GET /students/textbooks/1 or /students/textbooks/1.json
   def show
-    @found_recode = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
+    @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
   end
 
   # GET /students/textbooks/new
