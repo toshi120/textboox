@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       end
     end
   end
+  resources :students, only: [:show]
+
   namespace :teachers do
     resources :textbooks
   end
