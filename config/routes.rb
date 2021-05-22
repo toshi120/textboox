@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :students do
     resources :textbooks, only: [:index, :show] do
       resources :students_textbooks, only: [:create, :destroy] do
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :students, only: [:show]
+
 
   namespace :teachers do
     resources :textbooks
@@ -22,5 +23,6 @@ Rails.application.routes.draw do
     registrations:  'students/registrations'
   }
   root to: 'home#index'
+  resources :students, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
