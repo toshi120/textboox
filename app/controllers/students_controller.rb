@@ -3,6 +3,5 @@ class StudentsController < ApplicationController
     student = Student.find(params[:id])
     @name = student.name
     @my_textbooks = StudentsTextbook.where(student_id: student.id)
-    binding.pry
   end
 end
