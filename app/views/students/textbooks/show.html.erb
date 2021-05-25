@@ -24,6 +24,7 @@
   <ul class = 'progresses-list' >
     <% @progresses.each do |progress| %>
     <li class= 'progress-list'>
+      <%= l progress.created_at %>
       <%= progress.progress_page %>ページ
     </li>
     <% end %>
