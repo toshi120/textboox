@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     end
   end
 
-
   namespace :teachers do
     resources :textbooks
   end
+  
   devise_for :teachers, controllers: {
     sessions:       'teachers/sessions',
     passwords:      'teachers/passwords',
