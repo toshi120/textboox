@@ -205,3 +205,26 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.progresses-box {
+  padding-right: 800px;
+}
+
+.progresses-list {
+  max-width: 500px;
+}
+
+.progress-list { 
+  padding: 5px 5px;
+  margin: 10px;
+  border: solid 1px;
+  max-width: 500px;
+  overflow-wrap: break-word;
+  
+  
+}
+
+.item-red-btn,
+.item-destroy {
+  text-decoration: none;
+}
