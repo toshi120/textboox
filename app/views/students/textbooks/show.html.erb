@@ -18,14 +18,20 @@
     </div>
 
 <% if student_signed_in? && @students_textbook != nil %>
-
   <%= link_to "このテキストの学習をやめる", students_textbook_students_textbook_path(@textbook), method: :delete %>
   <%= link_to "進捗を記録する", new_students_textbook_students_textbook_progress_path(@textbook, @students_textbook) %>
+
+  <ul class = 'progresses-list' >
+    <% @progresses.each do |progress| %>
+    <li class= 'progress-list'>
+      <%= progress.progress_page %>ページ
+    </li>
+    <% end %>
 <% else %>
-
   <%= link_to "このテキストの学習を始める", students_textbook_students_textbooks_path(@textbook), method: :post %>
-
 <% end %>
+
+
 
 
 
