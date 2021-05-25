@@ -205,3 +205,9 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.progress-list { 
+  padding: 5px 5px;
+  margin: 10px;
+  border: solid 1px;
+}

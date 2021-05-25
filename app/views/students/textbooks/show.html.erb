@@ -25,7 +25,8 @@
     <% @progresses.each do |progress| %>
     <li class= 'progress-list'>
       <%= l progress.created_at %>
-      <%= progress.progress_page %>ページ
+      <%= progress.progress_page %>ページ<br>
+      <%= progress.comment%>
     </li>
     <% end %>
 <% else %>

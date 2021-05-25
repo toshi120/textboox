@@ -9,7 +9,7 @@ class Students::TextbooksController < Students::ApplicationController
   # GET /students/textbooks/1 or /students/textbooks/1.json
   def show
     @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
-    @progresses = Progress.where(students_textbook_id: @students_textbook.id)
+    @progresses = Progress.where(students_textbook_id: @students_textbook.id).order('created_at DESC')
   end
 
   # GET /students/textbooks/new
