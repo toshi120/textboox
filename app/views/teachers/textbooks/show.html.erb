@@ -22,8 +22,6 @@
     <%= link_to "テキストの編集", edit_teachers_textbook_path(@teachers_textbook), class: "item-red-btn" %>
     <p class="or-text">or</p>
     <%= link_to "削除", [:teachers, @teachers_textbook], method: :delete,  data: { confirm: 'Are you sure?' }, class:"item-destroy" %>
-  <% else %>
-    <%= link_to "購入画面に進む", item_orders_path(@item.id) ,class:"item-red-btn"%>
   <% end %>
 <% end %>
 
