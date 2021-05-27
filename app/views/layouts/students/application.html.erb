@@ -10,9 +10,15 @@
   </head>
 
   <body>
-    <h1>Students</h1>
+    <div class="main">
+      <div class= head-title-student>
+        <div class="welcome-textboox">
+          <%= image_tag "Textboox students.png", class:"textboox-logo" %>
+        </div>
+      </div>
+    </div>
     <% if student_signed_in? %>
-      LogOnUser: <%= link_to "#{current_student.name}", student_path(current_student.id) %>
+      学習お疲れ様です！ <%= link_to "#{current_student.name}", student_path(current_student.id) %> さん
       <%= link_to 'SignOut', destroy_student_session_path, method: :delete %>
     <% else %>
       <%= link_to 'SignUp', new_student_registration_path %>
