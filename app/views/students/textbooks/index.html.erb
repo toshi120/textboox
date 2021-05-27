@@ -1,10 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Students Textbooks</h1>
 
 <div class='item-contents'>
-    <h2 class='title'>テキスト一覧</h2>
-    <%= link_to '新規テキスト', "#", class: "subtitle" %>
+    <h2 class='title'>公開中テキスト一覧</h2>
     <ul class='item-lists'>
       <% @textbooks.each do |textbook| %>
       <li class='list'>
@@ -23,20 +19,3 @@
         <% end %>
       </li>
       <% end %>
-<table>
-  <thead>
-    <tr>
-      <th> Name </th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @textbooks.each do |textbook| %>
-      <tr>
-        <td><%= textbook.name %>
-        <td><%= link_to 'Show', [:students, textbook] %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

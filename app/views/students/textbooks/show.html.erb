@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <div class="textbook-show">
   <div class="textbook-box">
@@ -22,12 +22,14 @@
   <%= link_to "このテキストの学習をやめる", students_textbook_students_textbook_path(@textbook), method: :delete, class:"item-destroy" %>
   <div class = "progresses-box">
     <ul class = 'progresses-list' >
-      <% @progresses.each do |progress| %>
-      <li class= 'progress-list'>
-        <%= l progress.created_at %><br>
-        P<%= progress.progress_page %> / P<%= @students_textbook.textbook.page %><br>
-        <%= progress.comment%>
-      </li>
+      <% if @progresses != nil %>
+        <% @progresses.each do |progress| %>
+        <li class= 'progress-list'>
+          <%= l progress.created_at %><br>
+          P<%= progress.progress_page %> / P<%= @students_textbook.textbook.page %><br>
+          <%= progress.comment%>
+        </li>
+      <% end %>
     <% end %>
   </div>
 <% else %>

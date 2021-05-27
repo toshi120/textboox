@@ -22,7 +22,6 @@ class Teachers::TextbooksController < Teachers::ApplicationController
   # POST /teachers/textbooks or /teachers/textbooks.json
   def create
     @teachers_textbook = Textbook.new(teachers_textbook_params)
-    
 
     respond_to do |format|
       if @teachers_textbook.save
