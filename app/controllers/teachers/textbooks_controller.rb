@@ -25,7 +25,7 @@ class Teachers::TextbooksController < Teachers::ApplicationController
 
     respond_to do |format|
       if @teachers_textbook.save
-        format.html { redirect_to [:teachers, @teachers_textbook], notice: "Textbook was successfully created." }
+        format.html { redirect_to teachers_textbooks_path, notice: "Textbook was successfully created." }
         format.json { render :show, status: :created, location: @teachers_textbook }
       else
         format.html { render :new, status: :unprocessable_entity }

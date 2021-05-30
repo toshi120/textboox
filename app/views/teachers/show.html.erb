@@ -1,20 +1,23 @@
 <div class="contents row">
-  <p><%= @name %>さんの学習中テキスト</p>
-  <% @my_textbooks.each do |my_textbook| %>
-    <li class='list'>
-      <%= link_to [:teachers, my_textbook] do %>
-        <div class='item-img-content'>
-          <%= image_tag my_textbook.image, class: "item-img" %>
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= my_textbook.name %>
-          </h3>
-          <div class='item-price'>
-            <span><%= my_textbook.page %>ページ</span>
+  <div class = 'item-contents'>
+    <h2 class = 'title'><%= @name %>先生が登録したテキスト</h2>
+    <ul class= 'item-lists'>
+    <% @my_textbooks.each do |my_textbook| %>
+      <li class='list'>
+        <%= link_to [:teachers, my_textbook] do %>
+          <div class='item-img-content'>
+            <%= image_tag my_textbook.image, class: "item-img" %>
           </div>
-        </div>
-      <% end %>
-    </li>
-  <% end %>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= my_textbook.name %>
+            </h3>
+            <div class='item-price'>
+              <span><%= my_textbook.page %>ページ</span>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-class StudentsController < ApplicationController
+class StudentsController < Students::ApplicationController
 before_action :set_student  
 before_action :block_access
   def show
