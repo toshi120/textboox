@@ -1,18 +1,18 @@
 
-<div class='item-contents'>
+<div class='textbook-contents'>
     <h2 class='title'>公開中テキスト一覧</h2>
-    <ul class='item-lists'>
+    <ul class='textbook-lists'>
       <% @textbooks.each do |textbook| %>
       <li class='list'>
         <%= link_to [:students, textbook] do %>
-        <div class='item-img-content'>
-          <%= image_tag textbook.image, class: "item-img" %>
+        <div class='textbook-img-content'>
+          <%= image_tag textbook.image, class: "textbook-img" %>
         </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <div class='textbook-info'>
+          <h3 class='textbook-name'>
             <%= textbook.name %>
           </h3>
-          <div class='item-price'>
+          <div class='textbook-price'>
             <span><%= textbook.page %>ページ</span>
           </div>
         </div>
