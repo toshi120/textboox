@@ -8,6 +8,7 @@ class Teachers::TextbooksController < Teachers::ApplicationController
 
   # GET /teachers/textbooks/1 or /teachers/textbooks/1.json
   def show
+    @confirm_students = StudentsTextbook.where(textbook_id: @teachers_textbook.id)
   end
 
   # GET /teachers/textbooks/new

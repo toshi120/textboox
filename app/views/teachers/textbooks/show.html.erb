@@ -24,5 +24,20 @@
   <% end %>
 <% end %>
 
+<table>
+  <thead>
+    <tr>
+      <th>学習中生徒一覧</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @confirm_students.each do |confirm_student| %>
+      <tr>
+        <td><%= link_to confirm_student.student.name, '#' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <%= link_to 'Back', teachers_textbooks_path %>

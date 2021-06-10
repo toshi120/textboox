@@ -16,6 +16,8 @@
         <%= @textbook.note %>
       </span>
     </div>
+  </div>
+</div>
 
 <% if student_signed_in? && @students_textbook != nil %>
   <%= link_to "進捗を記録する", new_students_textbook_students_textbook_progress_path(@textbook, @students_textbook), class:"item-red-btn" %>
@@ -35,7 +37,6 @@
 <% else %>
   <%= link_to "このテキストの学習を始める", students_textbook_students_textbooks_path(@textbook), method: :post, class:"item-red-btn" %>
 <% end %>
-
 
 
 
