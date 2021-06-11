@@ -38,6 +38,17 @@
     <% end %>
   </tbody>
 </table>
-
+  <div class = "progresses-box">
+    <ul class = 'progresses-list' >
+      <% if @progresses != nil %>
+        <% @progresses.each do |progress| %>
+        <li class= 'progress-list'>
+          <%= l progress.created_at %><br>
+          P<%= progress.progress_page %> / P<%= @students_textbook.textbook.page %><br>
+          <%= progress.comment%>
+        </li>
+      <% end %>
+    <% end %>
+  </div>
 
 <%= link_to 'Back', teachers_textbooks_path %>
