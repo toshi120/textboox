@@ -16,30 +16,33 @@
         <%= @textbook.note %>
       </span>
     </div>
+  
+
+
+    <% if student_signed_in? && @students_textbook != nil %>
+      <%= link_to "進捗を記録する", new_students_textbook_students_textbook_progress_path(@textbook, @students_textbook), class:"item-red-btn" %>
+      <%= link_to "このテキストの学習をやめる", students_textbook_students_textbook_path(@textbook), method: :delete, class:"item-destroy" %>
+      <div class = "progresses-box">
+        <ul class = 'progresses-list' >
+          <% if @progresses != nil %>
+            <% @progresses.each do |progress| %>
+            <li class= 'progress-list'>
+              <%= l progress.created_at %><br>
+              P<%= progress.progress_page %> / P<%= @students_textbook.textbook.page %><br>
+              <%= progress.comment%>
+            </li>
+            <% end %>
+          <% end %>
+      </div>
+    <% else %>
+      <%= link_to "このテキストの学習を始める", students_textbook_students_textbooks_path(@textbook), method: :post, class:"item-red-btn" %>
+    <% end %>
+
+
+
+
+
+    <%# <%= link_to 'Edit', edit_students_textbook_path(@students_textbook) | %>
+    <%= link_to 'Back', students_textbooks_path %>
   </div>
 </div>
-
-<% if student_signed_in? && @students_textbook != nil %>
-  <%= link_to "進捗を記録する", new_students_textbook_students_textbook_progress_path(@textbook, @students_textbook), class:"item-red-btn" %>
-  <%= link_to "このテキストの学習をやめる", students_textbook_students_textbook_path(@textbook), method: :delete, class:"item-destroy" %>
-  <div class = "progresses-box">
-    <ul class = 'progresses-list' >
-      <% if @progresses != nil %>
-        <% @progresses.each do |progress| %>
-        <li class= 'progress-list'>
-          <%= l progress.created_at %><br>
-          P<%= progress.progress_page %> / P<%= @students_textbook.textbook.page %><br>
-          <%= progress.comment%>
-        </li>
-      <% end %>
-    <% end %>
-  </div>
-<% else %>
-  <%= link_to "このテキストの学習を始める", students_textbook_students_textbooks_path(@textbook), method: :post, class:"item-red-btn" %>
-<% end %>
-
-
-
-
-<%# <%= link_to 'Edit', edit_students_textbook_path(@students_textbook) | %>
-<%= link_to 'Back', students_textbooks_path %>

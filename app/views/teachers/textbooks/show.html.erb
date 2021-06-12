@@ -24,31 +24,20 @@
   <% end %>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>学習中生徒一覧</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @confirm_students.each do |confirm_student| %>
-      <tr>
-        <td><%= link_to confirm_student.student.name, '#' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-  <div class = "progresses-box">
-    <ul class = 'progresses-list' >
-      <% if @progresses != nil %>
+<div class = "progresses-box">
+学習中生徒一覧
+  <% @studying_students.each do |studying_student| %>    
+    <p><%= link_to studying_student.student.name, '#' %></p>
+    <ul class = 'progresses-list' >      
+      <% @progresses = Progress.where(students_textbook_id: studying_student.id).order('created_at DESC') %>
         <% @progresses.each do |progress| %>
-        <li class= 'progress-list'>
-          <%= l progress.created_at %><br>
-          P<%= progress.progress_page %> / P<%= @students_textbook.textbook.page %><br>
-          <%= progress.comment%>
-        </li>
-      <% end %>
+          <li class= 'progress-list'>
+            <%= l progress.created_at %><br>
+            P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>
+            <%= progress.comment%>
+          </li>
+        <% end %>  
     <% end %>
-  </div>
+</div>
 
 <%= link_to 'Back', teachers_textbooks_path %>
