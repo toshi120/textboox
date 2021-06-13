@@ -8,6 +8,11 @@ class Teachers::TextbooksController < Teachers::ApplicationController
 
   # GET /teachers/textbooks/1 or /teachers/textbooks/1.json
   def show
+    @studying_students = StudentsTextbook.where(textbook_id: @teachers_textbook.id)
+    # @studying_students.each do |studying_student|
+      # @progresses = Progress.where(students_textbook_id: studying_student.id).order('created_at DESC')
+      # binding.pry
+    # end
   end
 
   # GET /teachers/textbooks/new
