@@ -27,7 +27,7 @@
 <div class = "progresses-box">
 学習中生徒一覧
   <% @studying_students.each do |studying_student| %>    
-    <p><%= link_to studying_student.student.name, '#' %></p>
+    <p class="student_name"><%= studying_student.student.name %></p>
     <ul class = 'progresses-list' >      
       <% @progresses = Progress.where(students_textbook_id: studying_student.id).order('created_at DESC') %>
         <% @progresses.each do |progress| %>
