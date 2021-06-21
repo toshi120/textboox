@@ -228,3 +228,7 @@
 .item-destroy {
   text-decoration: none;
 }
+
+.hidden {
+  display: none;
+}

@@ -31,7 +31,7 @@
     <ul class = 'progresses-list' >      
       <% @progresses = Progress.where(students_textbook_id: studying_student.id).order('created_at DESC') %>
         <% @progresses.each do |progress| %>
-          <li class= 'progress-list'>
+          <li class= 'progress-list hidden' >
             <%= l progress.created_at %><br>
             P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>
             <%= progress.comment%>
