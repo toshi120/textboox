@@ -1,17 +1,27 @@
 function commentDisplay() {
 // console.log("イベント発火")
 const pullDownName = document.getElementsByClassName("student_name");
-const pullDownNames = Array.from(pullDownComment);
+const pullDownNames = Array.from(pullDownName);
 
-pullDownNames.forEach(function(student_name) {
-  student_name.addEventListener("click", function() {
-    console.log("イベント発火")
-  })
-});
+const pullDownComment = document.getElementsByClassName("progresses-list");
+const pullDownComments = Array.from(pullDownComment);
+console.log(pullDownComments);
 
-// PullDownComment.addEventListener("click", function() {
-//   console.log("イベント発火")
-// });
+// let x = 0
+// pullDownNames[x].addEventListener("click", function() {
+//   pullDownComments[x].setAttribute("style", "display:block");
+// })
+
+// pullDownNames[1].addEventListener("click", function() {
+//   pullDownComments[1].setAttribute("style", "display:block");
+// })
+
+for (let indexNum = 0; indexNum < pullDownNames.length; indexNum++) {
+  pullDownNames[indexNum].addEventListener("click", function() {
+    pullDownComments[indexNum].setAttribute("style", "display:block");
+  });
+}
+
 
 }
 
