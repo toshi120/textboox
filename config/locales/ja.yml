@@ -2,4 +2,11 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+  activerecord:
+    attributes:
+      textbook:
+        name: 参考書名
+        page: ページ数
+        note: 概要
+        image: 写真
 
