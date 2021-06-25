@@ -16,35 +16,37 @@
       </span>
     </div>
 
-<% if teacher_signed_in? %>
-  <% if current_teacher.id == @teachers_textbook.teacher_id %>
-    <%= link_to "テキストの編集", edit_teachers_textbook_path(@teachers_textbook), class: "item-red-btn" %>
-    <p class="or-text">or</p>
-    <%= link_to "削除", [:teachers, @teachers_textbook], method: :delete,  data: { confirm: 'Are you sure?' }, class:"item-destroy" %>
-  <% end %>
-<% end %>
+    <% if teacher_signed_in? %>
+      <% if current_teacher.id == @teachers_textbook.teacher_id %>
+        <%= link_to "テキストの編集", edit_teachers_textbook_path(@teachers_textbook), class: "item-red-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", [:teachers, @teachers_textbook], method: :delete,  data: { confirm: 'Are you sure?' }, class:"item-destroy" %>
+      <% end %>
+    <% end %>
+  </div>
 
 
 
-
-<div class="progresses-box">
-学習中生徒一覧
-  <% n = 0 %>
-  <% @studying_students.length.times do %>
-    <div class="student_name" > <%= @studying_students[n].student.name %> </div>
-      
-      <ul class = "progresses-list hidden" >
-      <% @progresses = Progress.where(students_textbook_id: @studying_students[n].id).order('created_at DESC') %>
-      <% @progresses.each do |progress| %>
-        <li class= 'progress-list' >
-          <%= l progress.created_at %><br>
-          P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>
-          <%= progress.comment%>
-        </li>
-      <% end %> 
-      </ul> 
-    <% n += 1 %>
-  <% end %>
+  <div class="progresses-box">
+    <h2 class ="studying-students-list">学習中生徒一覧</h2>
+    <% n = 0 %>
+    <% @studying_students.length.times do %>
+      <div class="student_name" >
+        <%= @studying_students[n].student.name %> 
+      </div>      
+        <ul class = "progresses-list hidden" >
+        <% @progresses = Progress.where(students_textbook_id: @studying_students[n].id).order('created_at DESC') %>
+        <% @progresses.each do |progress| %>
+          <li class= 'progress-list' >
+            <%= l progress.created_at %><br>
+            P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>
+            <%= progress.comment%>
+          </li>
+        <% end %> 
+        </ul> 
+      <% n += 1 %>
+    <% end %>
+  </div>
 </div>
 
 

@@ -12,7 +12,6 @@ for (let indexNum = 0; indexNum < pullDownNames.length; indexNum++) {
     if (pullDownComments[indexNum].getAttribute("style") == "display:block;") {
       pullDownComments[indexNum].removeAttribute("style", "display:block;")      
     } else {
-      debugger
     pullDownComments[indexNum].setAttribute("style", "display:block;")
     }
   });
