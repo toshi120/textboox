@@ -1,0 +1,12 @@
+.new-progress,
+.items-explain,
+.progress-btn-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-btn-contents {
+  padding-top: 10px;
+}
+
