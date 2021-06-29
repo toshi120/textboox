@@ -7,4 +7,11 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+
+  def self.students_guest
+    find_or_create_by!(email: 'student_guest@example.com') do |student|
+      student.password = SecureRandom.urlsafe_base64
+      student.name = '生徒用ゲストユーザー'
+    end
+  end
 end

@@ -25,5 +25,14 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :students, only: [:show]
   resources :teachers, only: [:show]
+
+  devise_scope :student do
+    post 'students/students_guest_sign_in', to: 'students/sessions#students_guest_sign_in'
+  end
+  
+  devise_scope :teacher do
+    post 'teachers/guest_sign_in', to: 'teachers/sessions#guest_sign_in'
+  end
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
