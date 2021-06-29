@@ -11,7 +11,7 @@
     </div>
     <div class="textbook-page-box">
       <span class="textbook-page">
-        <%= @textbook.page %>ページ
+        <%= @textbook.page %>
       </span>
       <span class="textbook-postage">
         <%= @textbook.note %>
@@ -27,8 +27,11 @@
   <div class = "progresses-box">
     <% if student_signed_in? && @students_textbook != nil %>
       <section>
-        <a href="#" class="progress-btn">進捗を記録する</a>
+        <div class="progress-btn">
+          進捗を記録する
+        </div>
       </section>
+      <%= render partial: "progress" %>
       <%# <%= link_to "進捗を記録する", new_students_textbook_students_textbook_progress_path(@textbook, @students_textbook), class:"progress-red-btn" %>
       <ul class = 'progresses-list' >
         <% if @progresses != nil %>

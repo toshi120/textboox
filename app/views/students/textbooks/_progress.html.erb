@@ -1,0 +1,22 @@
+<div class="progress-form-box hidden">
+    <%# <h2 class="progress-form-title">参考書の情報を入力</h2> %>
+  <%= form_with(model: [:students, @progress], url: students_textbook_students_textbook_progresses_path(@textbook, @students_textbook), method: :post, local: true) do |f| %>
+
+    <div class="new-progress">
+      <div class="weight-bold-text">
+        進んだページ
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :progress_page, class:"progress-text", id:"progress-page", maxlength:"5" %>ページ
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          気になったこと、わからなかったこと
+        </div>
+        <%= f.text_area :comment, class:"progress-text", id:"progress-comment", rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <div class="progress-btn-contents">
+      <%= f.submit "進捗の記録を保存する" ,class:"progress-submit-btn" %>
+    </div>
+  <% end %>
+</div>

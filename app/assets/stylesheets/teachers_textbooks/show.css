@@ -278,7 +278,7 @@ section {
   max-width: 500px;
   /* margin-left: 30px; */
 }
-a.progress-btn {
+.progress-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -298,7 +298,7 @@ a.progress-btn {
   text-decoration: none;
   transition-duration: 0.3s;
 }
-a.progress-btn:before {
+.progress-btn:before {
   content: '';
   width: 8px;
   height: 8px;
@@ -311,11 +311,11 @@ a.progress-btn:before {
   right: 25px;
   margin-top: -6px;
 }
-a.progress-btn:hover {
+.progress-btn:hover {
   background: #fff;
   color: #228bc8;
 }
-a.progress-btn:hover:before {
+.progress-btn:hover:before {
   border-top: 2px solid #228bc8;
   border-right: 2px solid #228bc8;
 }
