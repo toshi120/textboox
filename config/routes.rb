@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   end
   
   devise_scope :teacher do
-    post 'teachers/guest_sign_in', to: 'teachers/sessions#guest_sign_in'
+    post 'teachers/teachers_guest_sign_in', to: 'teachers/sessions#teachers_guest_sign_in'
   end
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
