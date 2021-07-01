@@ -24,4 +24,9 @@ class Teachers::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  def teachers_guest_sign_in
+    teacher = Teacher.teachers_guest
+    sign_in teacher
+    redirect_to teachers_textbooks_path
+  end
 end

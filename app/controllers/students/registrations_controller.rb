@@ -3,6 +3,7 @@
 class Students::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  # before_action :ensure_normal_student, only: :destroy
 
   # GET /resource/sign_up
   # def new
@@ -58,5 +59,17 @@ class Students::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
+  # end
+
+  def ensure_normal_student
+    if resouce.name == 'student_guest@example.com'
+      redirect_to root_path
+    end
+  end
+
+  # def guest_student_signout
+  #   if currrent_student.name == '生徒用ゲストユーザー'
+  #     current_student.destroy
+  #   end
   # end
 end
