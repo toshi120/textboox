@@ -24,5 +24,8 @@
 <table>
 
 
-
-<%= link_to 'New Textbook', new_teachers_textbook_path %>
+<%= link_to new_teachers_textbook_path, class:"new-textbook-btn" do %>
+  <i class="fas fa-book-open fa-6x">
+  </i>
+  <br>New Textbook
+<% end %>

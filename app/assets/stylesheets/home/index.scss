@@ -10,7 +10,7 @@
 
 .head-title-student {
   height: 90px;
-  background-color: #3f87ce;
+  background-color: #67c5ff;
 }
 
 .head-title-teacher {
@@ -90,4 +90,49 @@
   flex-direction: column;
   align-items: center;
   width: 25vw;
+}
+
+.user-greeding {
+  margin: 10px;
+}
+
+.student-signout {
+  display: inline-block;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.student-signout:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+.teacher-signout {
+  display: inline-block;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  color: #FF97C2;
+  border: solid 2px #FF97C2;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.teacher-signout:hover {
+  background: #FF97C2;
+  color: white;
+}
+
+.teacher-mypage {
+  color: #FF97C2;
+}
+
+.new-textbook-btn {
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
 }

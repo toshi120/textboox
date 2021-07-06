@@ -1,8 +1,9 @@
 <div class="contents row">
   <div class="container">
     <h2>Log in</h2>
-
+    
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render 'students/shared/error_messages', model: f.object %>
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true %>
@@ -21,7 +22,7 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", class:"btn-square" %>
       </div>
     <% end %>
   </div>

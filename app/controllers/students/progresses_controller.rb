@@ -8,8 +8,7 @@ class Students::ProgressesController < Students::ApplicationController
     @progress = Progress.new
   end
 
-  def create
-    
+  def create    
     @progress = Progress.new(progress_params)
     if @progress.save
       redirect_to students_textbook_path(@textbook)
