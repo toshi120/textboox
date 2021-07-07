@@ -206,7 +206,7 @@
   font-size: 23px;
 }
 
-.progresses-box
+.progresses-box,
 .progress-form {
   width: 50vw;
   display: flex;
@@ -324,9 +324,11 @@ section {
   border-right: 2px solid #228bc8;
 }
 
-/* .page-kana {
-  text-justify: center;
-} */
+.weight-bold-text {
+  font-size: large;
+  font-weight: bolder;
+  margin-top: 10px;
+}
 
 
 .hidden {

@@ -1,5 +1,6 @@
 
 <div class="textbook-show">
+
   <div class="textbook-box">
     <h2 class="name">
       <%= @teachers_textbook.name %>
@@ -35,14 +36,14 @@
         <%= @studying_students[n].student.name %> 
       </div>      
         <ul class = "progresses-list hidden" >
-        <% @progresses = Progress.where(students_textbook_id: @studying_students[n].id).order('created_at DESC') %>
-        <% @progresses.each do |progress| %>
-          <li class= 'progress-list' >
-            <%= l progress.created_at %><br>
-            P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>
-            <%= progress.comment%>
-          </li>
-        <% end %> 
+          <% @progresses = Progress.where(students_textbook_id: @studying_students[n].id).order('created_at DESC') %>
+          <% @progresses.each do |progress| %>
+            <li class= 'progress-list' >
+              <%= l progress.created_at %><br>
+              P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>
+              <%= progress.comment%>
+            </li>
+          <% end %> 
         </ul> 
       <% n += 1 %>
     <% end %>
