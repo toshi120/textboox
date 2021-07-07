@@ -19,7 +19,7 @@
       <% if student_signed_in? && @students_textbook == nil %>
         <%= link_to "このテキストの学習を始める", students_textbook_students_textbooks_path(@textbook), method: :post, class:"item-red-btn" %>
       <% else %>
-        <%= link_to "このテキストの学習をやめる", students_textbook_students_textbook_path(@textbook), method: :delete, class:"item-destroy" %>
+        <%= link_to "このテキストの学習をやめる", students_textbook_students_textbook_path(@textbook, @students_textbook), method: :delete, class:"item-destroy" %>
       <% end %>
     </div>
   </div>
@@ -31,7 +31,7 @@
           進捗を記録する
         </div>
       </section>
-      <%= render partial: "progress" %>
+      <%= render partial: "students/textbooks/progress" %>
       <%# <%= link_to "進捗を記録する", new_students_textbook_students_textbook_progress_path(@textbook, @students_textbook), class:"progress-red-btn" %>
       <ul class = 'progresses-list' >
         <% if @progresses != nil %>
