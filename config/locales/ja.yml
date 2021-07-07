@@ -9,4 +9,7 @@ ja:
         page: ページ数
         note: 概要
         image: 写真
+      progress:
+        progress_page: 「進んだページ」
+        comment: 「気になったこと、わからなかったこと」
 

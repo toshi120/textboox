@@ -8,7 +8,7 @@ class Students::TextbooksController < Students::ApplicationController
 
   # GET /students/textbooks/1 or /students/textbooks/1.json
   def show
-    @progress = Progress.all
+    @progress = Progress.new
     @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
     unless @students_textbook == nil
       @progresses = Progress.where(students_textbook_id: @students_textbook.id).order('created_at DESC')
@@ -66,6 +66,7 @@ class Students::TextbooksController < Students::ApplicationController
     def set_textbook
       @textbook = Textbook.find(params[:id])
     end
+
 
     # def set_students_textbook
     #   @students_textbook = StudentsTextbook.new(students_textbook_params)

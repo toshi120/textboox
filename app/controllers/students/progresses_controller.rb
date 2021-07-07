@@ -14,7 +14,7 @@ class Students::ProgressesController < Students::ApplicationController
       redirect_to students_textbook_path(@textbook)
     else
       @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)  
-      @progress = Progress.new
+
       @progresses = Progress.where(students_textbook_id: @students_textbook.id).order('created_at DESC')
       render template: "students/textbooks/show"
     end

@@ -206,7 +206,8 @@
   font-size: 23px;
 }
 
-.progresses-box {
+.progresses-box
+.progress-form {
   width: 50vw;
   display: flex;
   align-items: center;
@@ -222,12 +223,15 @@
   font-size: 25px;
 }
 
-.progresses-list {
+.progresses-list,
+.progress-text {
   width: 40vw;
   align-items: center;
 }
 
-.progress-list { 
+.progress-list,
+.progress-text,
+.progress-page-form { 
   padding: 0.5em 1em;
   margin: 1em 0;
   font-weight: bold;
@@ -320,6 +324,9 @@ section {
   border-right: 2px solid #228bc8;
 }
 
+/* .page-kana {
+  text-justify: center;
+} */
 
 
 .hidden {

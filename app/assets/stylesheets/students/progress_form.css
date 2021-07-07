@@ -1,6 +1,9 @@
 .new-progress,
 .items-explain,
-.progress-btn-contents {
+.progress-btn-contents,
+.progresses-box,
+.weight-bold-text,
+.progress-form-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,3 +13,28 @@
   padding-top: 10px;
 }
 
+.page-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-submit-btn {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px #668ad8;
+  border-right: solid 4px #668ad8;
+  color: #668ad8;
+  background: #e1f3ff;
+  transition: .4s;
+  border-top: none;
+  border-bottom: none;
+}
+
+.progress-submit-btn:hover {
+  background: #668ad8;
+  color: #FFF;
+}
