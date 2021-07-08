@@ -1,7 +1,3 @@
-<h1>New Teachers Textbook</h1>
-
-<%# <%= render 'form', teachers_textbook: @teachers_textbook %> 
-
 
 
   <div class="items-sell-main">  
@@ -13,19 +9,17 @@
     <div class="img-upload">
       <div class="weight-bold-text">
         出品画像
-        <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
-        </p>
+        </p>        
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
     <div class="new-items">
       <div class="weight-bold-text">
         参考書名
-        <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
@@ -44,7 +38,6 @@
         <div class="price-content">
           <div class="price-text">
             <span>ページ</span>
-            <span class="indispensable">必須</span>
           </div>
           <span class="sell-yen">
           P <%= f.text_field :page, class:"price-input", id:"item-price", placeholder:"例）300" %>

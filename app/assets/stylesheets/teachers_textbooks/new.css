@@ -1,3 +1,25 @@
 #error_explanation {
   color: red;
 }
+
+.item-sell-main,
+.img-upload,
+.click-upload,
+.textbook-register-title,
+.new-items,
+.price-content,
+.sell-price,
+.sell-yen,
+.price-content,
+.sell-btn-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.items-sell-title {
+  text-align: center;
+  font-weight: bolder;
+}
+
+
