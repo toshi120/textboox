@@ -3,45 +3,46 @@
   <div class="items-sell-main">  
     <%= form_with(model: [:teachers, @teachers_textbook], local: true) do |f| %>
     <%= render 'teachers/shared/error_messages', model: f.object %>
-    <h2 class="items-sell-title">参考書の情報を入力</h2>
+    <h2 class="items-sell-title">新規テキストの情報を入力</h2>
 
 
     <div class="img-upload">
       <div class="weight-bold-text">
-        出品画像
+        テキストの画像
       </div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
         </p>        
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, id:"textbook-image" %>
       </div>
     </div>
-    <div class="new-items">
+    <div class="new-textbooks">
       <div class="weight-bold-text">
-        参考書名
+        テキスト名
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :name, class:"textbooks-text", id:"textbook-name", placeholder:"テキスト名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
-          参考書の説明
+          テキストの説明
         </div>
-        <%= f.text_area :note, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :note, class:"textbooks-text", id:"textbooks-info", placeholder:"テキストの概要（必須 300文字まで）" ,rows:"7" ,maxlength:"300" %>
       </div>
     </div>
 
     <div class="sell-price">
       <div class="weight-bold-text question-text">
-        <span>全ページ数</span>
+        <span>ページ数</span>
       </div>
       <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>ページ</span>
+        <div class="pages-content">
+          
+          <div class="page-text">
+            <%= f.text_field :page, class:"textbooks-text", id:"textbooks-page", placeholder:"例）300", maxlength:"5" %>
           </div>
-          <span class="sell-yen">
-          P <%= f.text_field :page, class:"price-input", id:"item-price", placeholder:"例）300" %>
-          </span>
+          <div class="weight-bold-text">
+            ページ
+          </div>
         </div>
       </div>
     </div>
@@ -49,7 +50,7 @@
   
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "参考書を追加する" ,class:"sell-btn" %>
+      <%= f.submit "テキストを追加する" ,class:"add-newtextbook-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>

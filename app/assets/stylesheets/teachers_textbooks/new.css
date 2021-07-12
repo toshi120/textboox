@@ -6,7 +6,7 @@
 .img-upload,
 .click-upload,
 .textbook-register-title,
-.new-items,
+.new-textbooks,
 .price-content,
 .sell-price,
 .sell-yen,
@@ -22,4 +22,57 @@
   font-weight: bolder;
 }
 
+.textbooks-text {
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  font-weight: bold;
+  color: #FF97C2;/*文字色*/
+  background: #FFF;
+  border: solid 3px #FF97C2;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  
+}
 
+.pages-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+#textbook-name {
+  width: 300px;
+}
+
+#textbooks-info {
+  width: 400px;
+}
+
+#textbooks-page {
+  width: 110px;
+}
+
+.add-newtextbook-btn {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px #FF97C2;
+  border-right: solid 4px #FF97C2;
+  color: #FF97C2;
+  background: #faeff4;
+  transition: .4s;
+  border-top: none;
+  border-bottom: none;
+}
+
+.add-newtextbook-btn:hover {
+  background: #FF97C2;
+  color: #FFF;
+}
+
+input,
+textarea {
+  outline:none;
+}
