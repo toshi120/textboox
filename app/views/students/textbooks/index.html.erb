@@ -6,6 +6,9 @@
       <% @textbooks.each do |textbook| %>
       <li class='list'>
         <%= link_to [:students, textbook] do %>
+        <div class="textbook-teacher-name">
+          <%= textbook.teacher.name %>先生担当
+        </div>
         <div class='textbook-img-content'>
           <%= image_tag textbook.image, class: "textbook-img" %>
         </div>

@@ -4,6 +4,7 @@ class Students::TextbooksController < Students::ApplicationController
   # GET /students/textbooks or /students/textbooks.json
   def index
     @textbooks = Textbook.all
+  
   end
 
   # GET /students/textbooks/1 or /students/textbooks/1.json
