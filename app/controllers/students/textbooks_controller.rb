@@ -11,11 +11,14 @@ class Students::TextbooksController < Students::ApplicationController
   def show
     @progress = Progress.new
     @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
-    unless @students_textbook == nil
+    if @students_textbook != nil 
       @progresses = Progress.where(students_textbook_id: @students_textbook.id).order('created_at DESC')
-      @last_progress = @progresses.first
-      @progress_percent = @last_progress.progress_page / @textbook.page.to_f * 100
-      
+      if @progresses == []
+        @progress_percent = 0
+      else
+        @last_progress = @progresses.first
+        @progress_percent = @last_progress.progress_page / @textbook.page.to_f * 100     
+      end
     end
    
   end
