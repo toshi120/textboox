@@ -62,9 +62,7 @@ class Students::RegistrationsController < Devise::RegistrationsController
   # end
 
   def ensure_normal_student
-    if resouce.name == 'student_guest@example.com'
-      redirect_to root_path
-    end
+    redirect_to root_path if resouce.name == 'student_guest@example.com'
   end
 
   # def guest_student_signout

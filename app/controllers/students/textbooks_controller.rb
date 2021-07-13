@@ -4,24 +4,22 @@ class Students::TextbooksController < Students::ApplicationController
   # GET /students/textbooks or /students/textbooks.json
   def index
     @textbooks = Textbook.all
-  
   end
 
   # GET /students/textbooks/1 or /students/textbooks/1.json
   def show
     @progress = Progress.new
     @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
-    if @students_textbook != nil 
+    unless @students_textbook.nil?
       @progresses = Progress.where(students_textbook_id: @students_textbook.id).order('created_at DESC')
       if @progresses == []
         @progress_percent = 0
       else
         @last_progress = @progresses.first
-        @progress_percent_nofloor = @last_progress.progress_page / @textbook.page.to_f * 100     
+        @progress_percent_nofloor = @last_progress.progress_page / @textbook.page.to_f * 100
         @progress_percent = @progress_percent_nofloor.floor
       end
     end
-   
   end
 
   # GET /students/textbooks/new
@@ -71,18 +69,18 @@ class Students::TextbooksController < Students::ApplicationController
   # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_textbook
-      @textbook = Textbook.find(params[:id])
-    end
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_textbook
+    @textbook = Textbook.find(params[:id])
+  end
 
-    # def set_students_textbook
-    #   @students_textbook = StudentsTextbook.new(students_textbook_params)
-    # end
+  # def set_students_textbook
+  #   @students_textbook = StudentsTextbook.new(students_textbook_params)
+  # end
 
-    # # Only allow a list of trusted parameters through.
-    # def students_textbook_params
-    #   params.permit().merge(student_id: current_student.id, textbook_id: @textbook.id)
-    # end
+  # # Only allow a list of trusted parameters through.
+  # def students_textbook_params
+  #   params.permit().merge(student_id: current_student.id, textbook_id: @textbook.id)
+  # end
 end

@@ -1,6 +1,6 @@
 class Students::StudentsTextbooksController < Students::ApplicationController
   before_action :set_textbook
-  
+
   def create
     @students_textbook = StudentsTextbook.new(students_textbook_params)
     if @students_textbook.save
@@ -17,13 +17,12 @@ class Students::StudentsTextbooksController < Students::ApplicationController
   end
 
   private
-    def students_textbook_params
-      params.permit(:students_textbook).merge(student_id: current_student.id, textbook_id: @textbook.id)
-    end
 
-    def set_textbook
-      @textbook = Textbook.find(params[:textbook_id])
-    end
-    
-    
+  def students_textbook_params
+    params.permit(:students_textbook).merge(student_id: current_student.id, textbook_id: @textbook.id)
+  end
+
+  def set_textbook
+    @textbook = Textbook.find(params[:textbook_id])
+  end
 end

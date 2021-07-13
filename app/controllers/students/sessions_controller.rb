@@ -30,5 +30,4 @@ class Students::SessionsController < Devise::SessionsController
     sign_in student
     redirect_to students_textbooks_path
   end
-
 end

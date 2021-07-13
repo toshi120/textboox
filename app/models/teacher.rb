@@ -9,7 +9,7 @@ class Teacher < ApplicationRecord
 
   def self.teachers_guest
     find_or_create_by!(email: 'teacher_guest@example.com') do |teacher|
-      teacher.password = "guestteacher123"
+      teacher.password = 'guestteacher123'
       teacher.name = '先生用ゲストユーザー'
     end
   end

@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :textbook do
-    name        {"RubyonRailsチュートリアル"}
-    note        {"Railsの基礎を学ぶことができます。"}
-    page        {300}
+    name        { 'RubyonRailsチュートリアル' }
+    note        { 'Railsの基礎を学ぶことができます。' }
+    page        { 300 }
     association :teacher
 
     after(:build) do |textbook|

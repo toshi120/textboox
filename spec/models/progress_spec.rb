@@ -14,21 +14,21 @@ RSpec.describe Progress, type: :model do
 
     context '進捗記録が残せないとき' do
       it '進んだページが空だと記録できない' do
-        @progress.progress_page = ""
+        @progress.progress_page = ''
         @progress.valid?
-        expect(@progress.errors.full_messages).to include("「進んだページ」を入力してください")
+        expect(@progress.errors.full_messages).to include('「進んだページ」を入力してください')
       end
 
       it '進んだページが半角数字でないと記録できない' do
-        @progress.progress_page = "１００"
+        @progress.progress_page = '１００'
         @progress.valid?
-        expect(@progress.errors.full_messages).to include("「進んだページ」は数値で入力してください")
+        expect(@progress.errors.full_messages).to include('「進んだページ」は数値で入力してください')
       end
 
       it 'コメントが空だと記録できない' do
-        @progress.comment = ""
+        @progress.comment = ''
         @progress.valid?
-        expect(@progress.errors.full_messages).to include("「気になったこと、わからなかったこと」を入力してください")
+        expect(@progress.errors.full_messages).to include('「気になったこと、わからなかったこと」を入力してください')
       end
     end
   end

@@ -2,11 +2,9 @@ class Students::ApplicationController < ApplicationController
   layout 'students/application'
   before_action :authenticate_student!
 
-  private 
-  
+  private
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: :name)
   end
-   
-
 end
