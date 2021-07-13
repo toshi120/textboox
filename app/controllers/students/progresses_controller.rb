@@ -23,8 +23,7 @@ class Students::ProgressesController < Students::ApplicationController
         @progress_percent = @progress_percent_nofloor.floor
       end
       render template: "students/textbooks/show"
-    end
-      
+    end     
   end
 
   private
