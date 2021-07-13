@@ -5,9 +5,9 @@ ja:
   activerecord:
     attributes:
       textbook:
-        name: 参考書名
+        name: テキスト名
         page: ページ数
-        note: 概要
+        note: テキストの説明
         image: 写真
       progress:
         progress_page: 「進んだページ」
