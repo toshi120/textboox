@@ -28,7 +28,7 @@
     <% if student_signed_in? && @students_textbook != nil %>
       <div class= weight-bold-text>あなたの現在の進捗状況</div>
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow=<%= @progress_percent.to_s %> aria-valuemin="0" aria-valuemax="100" style=<%= "width:" + @progress_percent.to_s + "%;" %>> <%= @progress_percent.floor %>%</div>
+        <div class="progress-bar" role="progressbar" aria-valuenow=<%= @progress_percent.to_s %> aria-valuemin="0" aria-valuemax="100" style=<%= "width:" + @progress_percent.to_s + "%;" %>> <%= @progress_percent %>%</div>
       </div>
 
       <section>

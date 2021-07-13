@@ -17,7 +17,8 @@ class Students::TextbooksController < Students::ApplicationController
         @progress_percent = 0
       else
         @last_progress = @progresses.first
-        @progress_percent = @last_progress.progress_page / @textbook.page.to_f * 100     
+        @progress_percent_nofloor = @last_progress.progress_page / @textbook.page.to_f * 100     
+        @progress_percent = @progress_percent_nofloor.floor
       end
     end
    
