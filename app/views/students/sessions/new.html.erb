@@ -1,8 +1,9 @@
 <div class="contents row">
   <div class="container">
     <h2>Log in</h2>
-    
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= form_with model: @student, url: student_session_path, local: true do |f| %>
     <%= render 'students/shared/error_messages', model: f.object %>
       <div class="field">
         <%= f.label :email %><br />
@@ -25,5 +26,11 @@
         <%= f.submit "Log in", class:"btn-square" %>
       </div>
     <% end %>
+    <div>
+      <%= link_to '新規登録はこちら', new_student_registration_path %>
+    </div>
+    <div>
+      <%= link_to 'もどる', root_path %>
+    </div>
   </div>
 </div>

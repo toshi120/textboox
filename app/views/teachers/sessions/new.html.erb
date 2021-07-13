@@ -2,7 +2,8 @@
   <div class="container">
     
     <h2>Log in</h2>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
@@ -24,8 +25,12 @@
       <div class="actions">
         <%= f.submit "Log in", class:"btn-square" %>
       </div>
-
-      <%= render "teachers/shared/links" %>
+    <div>
+      <%= link_to '新規登録はこちら', new_teacher_registration_path %>
+    </div>
+    <div>
+      <%= link_to 'もどる', root_path %>
+    </div>
     <% end %>
   </div>
 </div>
