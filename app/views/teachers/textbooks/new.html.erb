@@ -1,58 +1,60 @@
 
 
-  <div class="items-sell-main">  
-    <%= form_with(model: [:teachers, @teachers_textbook], local: true) do |f| %>
-    <%= render 'teachers/shared/error_messages', model: f.object %>
-    <h2 class="items-sell-title">新規テキストの情報を入力</h2>
+  <div class="textbook-form-contents">  
+    <div class="textbook-form-main">
+      <%= form_with(model: [:teachers, @teachers_textbook], local: true) do |f| %>
+      <%= render 'teachers/shared/error_messages', model: f.object %>
+      <h2 class="textbook-register-title">新規テキストの情報を入力</h2>
 
 
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        テキストの画像
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>        
-        <%= f.file_field :image, id:"textbook-image" %>
-      </div>
-    </div>
-    <div class="new-textbooks">
-      <div class="weight-bold-text">
-        テキスト名
-      </div>
-      <%= f.text_area :name, class:"textbooks-text", id:"textbook-name", placeholder:"テキスト名（必須 40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
+      <div class="img-upload">
         <div class="weight-bold-text">
-          テキストの説明
+          テキストの画像
         </div>
-        <%= f.text_area :note, class:"textbooks-text", id:"textbooks-info", placeholder:"テキストの概要（必須 300文字まで）" ,rows:"7" ,maxlength:"300" %>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>        
+          <%= f.file_field :image, id:"textbook-image" %>
+        </div>
       </div>
-    </div>
-
-    <div class="sell-price">
-      <div class="weight-bold-text question-text">
-        <span>ページ数</span>
-      </div>
-      <div>
-        <div class="pages-content">
-          
-          <div class="page-text">
-            <%= f.text_field :page, class:"textbooks-text", id:"textbooks-page", placeholder:"例）300", maxlength:"5" %>
-          </div>
+      <div class="new-textbooks">
+        <div class="weight-bold-text">
+          テキスト名
+        </div>
+        <%= f.text_area :name, class:"textbooks-text", id:"textbook-name", placeholder:"テキスト名（必須 40文字まで)", maxlength:"40" %>
+        <div class="items-explain">
           <div class="weight-bold-text">
-            ページ
+            テキストの説明
+          </div>
+          <%= f.text_area :note, class:"textbooks-text", id:"textbooks-info", placeholder:"テキストの概要（必須 300文字まで）" ,rows:"7" ,maxlength:"300" %>
+        </div>
+      </div>
+
+      <div class="register-page">
+        <div class="weight-bold-text question-text">
+          <span>ページ数</span>
+        </div>
+        <div>
+          <div class="pages-content">
+            
+            <div class="page-text">
+              <%= f.text_field :page, class:"textbooks-text", id:"textbooks-page", placeholder:"例）300", maxlength:"5" %>
+            </div>
+            <div class="weight-bold-text">
+              ページ
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-  
-    <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "テキストを追加する" ,class:"add-newtextbook-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    
+      <%# 下部ボタン %>
+      <div class="textbook-btn-contents">
+        <%= f.submit "テキストを追加する" ,class:"add-newtextbook-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
     </div>
-    <%# /下部ボタン %>
   </div>
   <% end %>

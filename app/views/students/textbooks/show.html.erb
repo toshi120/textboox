@@ -19,7 +19,7 @@
       <% if student_signed_in? && @students_textbook == nil %>
         <%= link_to "このテキストの学習を始める", students_textbook_students_textbooks_path(@textbook), method: :post, class:"item-red-btn" %>
       <% else %>
-        <%= link_to "このテキストの学習をやめる", students_textbook_students_textbook_path(@textbook, @students_textbook), method: :delete, class:"item-destroy" %>
+        <%= link_to "このテキストの学習をやめる", students_textbook_students_textbook_path(@textbook, @students_textbook), method: :delete, data: {confirm: '今までの記録全て削除されます。よろしいですか？'}, class:"item-destroy" %>
       <% end %>
     </div>
   </div>
