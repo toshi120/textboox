@@ -1,31 +1,21 @@
 class Teachers::TextbooksController < Teachers::ApplicationController
   before_action :set_teachers_textbook, only: %i[show edit update destroy]
 
-  # GET /teachers/textbooks or /teachers/textbooks.json
   def index
     @teachers_textbooks = Textbook.all
   end
 
-  # GET /teachers/textbooks/1 or /teachers/textbooks/1.json
   def show
     @studying_students = StudentsTextbook.where(textbook_id: @teachers_textbook.id)
-    # binding.pry
-    # @studying_students.each do |studying_student|
-    # @progresses = Progress.where(students_textbook_id: studying_student.id).order('created_at DESC')
-    # binding.pry
-    # end
   end
 
-  # GET /teachers/textbooks/new
   def new
     @teachers_textbook = Textbook.new
   end
 
-  # GET /teachers/textbooks/1/edit
   def edit
   end
 
-  # POST /teachers/textbooks or /teachers/textbooks.json
   def create
     @teachers_textbook = Textbook.new(teachers_textbook_params)
 
@@ -40,7 +30,6 @@ class Teachers::TextbooksController < Teachers::ApplicationController
     end
   end
 
-  # PATCH/PUT /teachers/textbooks/1 or /teachers/textbooks/1.json
   def update
     respond_to do |format|
       if @teachers_textbook.update(teachers_textbook_params)
@@ -53,7 +42,6 @@ class Teachers::TextbooksController < Teachers::ApplicationController
     end
   end
 
-  # DELETE /teachers/textbooks/1 or /teachers/textbooks/1.json
   def destroy
     @teachers_textbook.destroy
     respond_to do |format|
@@ -64,14 +52,11 @@ class Teachers::TextbooksController < Teachers::ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_teachers_textbook
     @teachers_textbook = Textbook.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def teachers_textbook_params
-    # params.fetch(:teachers_textbook, {})
     params.require(:textbook).permit(:name, :note, :page, :image).merge(teacher_id: current_teacher.id)
   end
 end

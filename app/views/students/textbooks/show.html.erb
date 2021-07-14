@@ -39,7 +39,6 @@
       <%= form_with(model: [:students, @progress], url: students_textbook_students_textbook_progresses_path(@textbook, @students_textbook), method: :post, local: true, class: "progress-form") do |f| %>
       <%= render 'students/shared/error_messages', model: f.object %>
         <div class="progress-form-box hidden">
-          <%# <h2 class="progress-form-title">参考書の情報を入力</h2> %>
           <div class="new-progress">
             <div class="weight-bold-text">
               <div class="weight-bold-text">
@@ -64,7 +63,6 @@
           </div>
         </div>
       <% end %>
-      <%# <%= link_to "進捗を記録する", new_students_textbook_students_textbook_progress_path(@textbook, @students_textbook), class:"progress-red-btn" %>
       <ul class = 'progresses-list' >
         <% if @progresses != nil %>
           <% @progresses.each do |progress| %>
