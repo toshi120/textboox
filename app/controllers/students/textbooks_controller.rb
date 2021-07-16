@@ -2,7 +2,7 @@ class Students::TextbooksController < Students::ApplicationController
   before_action :set_textbook, only: [:show]
 
   def index
-    @textbooks = Textbook.all
+    @textbooks = Textbook.all.order('created_at DESC')
   end
 
   def show
