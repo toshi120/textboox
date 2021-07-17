@@ -54,7 +54,7 @@ https://resemom.jp/article/2020/06/23/56878.html
 
 生徒はそのテキストに対して「学習を始める」ボタンをを押すと、  
 そのテキストの進捗を記録できるようになります。
-![progress_textbook](https://gyazo.com/39b0ee8f424dd0678ceb2531339586af)
+![progress_textbook](https://gyazo.com/39b0ee8f424dd0678ceb2531339586af/raw)
 
 # テーブル設計
 
