@@ -2,7 +2,9 @@
 ## アプリ名
 ### Textboox
 [本番環境はこちら](http://35.75.190.69/)  
-
+<Basic認証>
+username: toshi  
+password: 2222
 
 
 
