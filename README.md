@@ -32,7 +32,7 @@
 
 |  疑問点があったら塾の先生に質問するか  |  Google検索予測 |
 | -------------------------------- | -------------- |
-| <img src="https://gyazo.com/7e7b387df56d02b38ab280ffd4a1a854"> | <img src="https://gyazo.com/28d0e40c7a3ef87321916d5145a6cd34"> |
+| <img src="https://i.gyazo.com/7e7b387df56d02b38ab280ffd4a1a854.png"> | <img src="https://i.gyazo.com/28d0e40c7a3ef87321916d5145a6cd34.png"> |
 
 
 # テーブル設計
