@@ -70,4 +70,4 @@ https://resemom.jp/article/2020/06/23/56878.html
 
 # DB設計
 
-<img src="https://i.gyazo.com/59c764511514c7e8b0808c42b8a8f6f6.png">
+<img src="https://i.gyazo.com/82d3ee42e1b174a28a70d1ab3c465b2f.png">
