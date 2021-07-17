@@ -50,7 +50,7 @@ https://resemom.jp/article/2020/06/23/56878.html
 ## 機能一部紹介
 ### テキスト投稿機能
 先生は自分が担当しているテキストを投稿する形で公開します
-![post_textbook](https://gyazo.com/cdd13ca344f307f44b3da375e3e315e4)
+![post_textbook](https://gyazo.com/cdd13ca344f307f44b3da375e3e315e4/raw)
 
 # テーブル設計
 
