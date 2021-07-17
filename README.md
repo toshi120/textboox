@@ -64,7 +64,7 @@ https://resemom.jp/article/2020/06/23/56878.html
 
 ### 進捗確認
 先生は進捗を記録した生徒別に確認することが可能です。
-
+![check_progress](https://gyazo.com/8561c865c7047b370cdfb3155a57a8c7/raw)
 
 # テーブル設計
 
