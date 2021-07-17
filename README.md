@@ -53,8 +53,15 @@ https://resemom.jp/article/2020/06/23/56878.html
 ・進捗状況が一目でわかるようにプログレスバーで表現。生徒のモチベーションもUP。  
 
 ## 使用技術
-・ Ruby 2.6.5
-・ Ruby on Rails 6.0.0
+・ Ruby 2.6.5  
+・ Ruby on Rails 6.0.0  
+・ MySQL  
+・ MariaDB  
+・ Nginx  
+・ AWS  
+&emsp; EC2  
+&emsp; S3  
+・ RSpec
 
 ## 機能一部紹介
 ### テキスト投稿機能
