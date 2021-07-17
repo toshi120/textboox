@@ -52,6 +52,10 @@ https://resemom.jp/article/2020/06/23/56878.html
 先生は自分が担当しているテキストを投稿する形で公開します
 ![post_textbook](https://gyazo.com/cdd13ca344f307f44b3da375e3e315e4/raw)
 
+生徒はそのテキストに対して「学習を始める」ボタンをを押すと、  
+そのテキストの進捗を記録できるようになります。
+![progress_textbook](https://gyazo.com/39b0ee8f424dd0678ceb2531339586af)
+
 # テーブル設計
 
 ## students テーブル
