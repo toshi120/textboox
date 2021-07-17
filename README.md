@@ -53,12 +53,18 @@ https://resemom.jp/article/2020/06/23/56878.html
   
 ![post_textbook](https://gyazo.com/cdd13ca344f307f44b3da375e3e315e4/raw)
 
-###進捗記録機能
+### 進捗記録機能
 生徒はそのテキストに対して「学習を始める」ボタンをを押すと、  
 そのテキストの進捗を記録できるようになります。
   
 ![progress_textbook](https://gyazo.com/39b0ee8f424dd0678ceb2531339586af/raw)
+  
+進捗を記録すると↓のように表示されます。
 ![progress_textbook2](https://gyazo.com/e616ccb18e133c30ee231c242820ce38/raw)
+
+### 進捗確認
+先生は進捗を記録した生徒別に確認することが可能です。
+
 
 # テーブル設計
 
