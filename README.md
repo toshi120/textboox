@@ -61,7 +61,7 @@ https://resemom.jp/article/2020/06/23/56878.html
 ・ AWS  
 &emsp;EC2  
 &emsp;S3  
-・ RSpec
+・ RSpec  
 ・ Capistrano
 
 ## 機能一部紹介
