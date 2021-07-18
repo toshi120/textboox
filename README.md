@@ -62,6 +62,7 @@ https://resemom.jp/article/2020/06/23/56878.html
 &emsp;EC2  
 &emsp;S3  
 ・ RSpec
+・ Capistrano
 
 ## 機能一部紹介
 ### テキスト投稿機能
