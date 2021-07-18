@@ -59,8 +59,8 @@ https://resemom.jp/article/2020/06/23/56878.html
 ・ MariaDB  
 ・ Nginx  
 ・ AWS  
-&emsp; EC2  
-&emsp; S3  
+&emsp;EC2  
+&emsp;S3  
 ・ RSpec
 
 ## 機能一部紹介
