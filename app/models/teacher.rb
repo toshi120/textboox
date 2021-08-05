@@ -1,6 +1,6 @@
 class Teacher < ApplicationRecord
   has_many :textbooks
-  has_many :progresses
+  has_many :reads
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

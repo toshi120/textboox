@@ -67,7 +67,10 @@
         <% if @progresses != nil %>
           <% @progresses.each do |progress| %>
             <li class= 'progress-list'>
-              <span><%= l progress.created_at %><i class="far fa-square fa-lg"></i></span><br>
+              <span><%= l progress.created_at %>
+              <% if @read_progress.exists? %>
+                <i class="fas fa-check-circle fa-lg"></i></span><br>
+              <% end %>
               P<%= progress.progress_page %> / P<%= @students_textbook.textbook.page %><br>
               <%= progress.comment%>
             </li>

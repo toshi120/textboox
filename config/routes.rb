@@ -3,13 +3,16 @@ Rails.application.routes.draw do
   namespace :students do
     resources :textbooks, only: [:index, :show] do
       resources :students_textbooks, only: [:create, :destroy] do
-        resources :progresses, only: [:new, :create]
+        resources :progresses, only: [:new, :create] do
+          resources :reads, only: [:create, :destroy] 
+        end
       end
     end
   end
 
   namespace :teachers do
     resources :textbooks
+ 
   end
   
   devise_for :teachers, controllers: {

@@ -19,6 +19,13 @@ for (let indexNum = 0; indexNum < pullDownNames.length; indexNum++) {
   });
 }
 
+//チェックボックス（既読）
+// const checkBox = document.getElementsByClassName("fa-square");
+
+// checkBox.addEventListener("click", function() {
+  
+// })
+
 
 
 }

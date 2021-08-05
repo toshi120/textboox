@@ -6,6 +6,7 @@ class Students::TextbooksController < Students::ApplicationController
   end
 
   def show
+    @read_progress = Read.where(teacher_id: current_teacher.id)
     @progress = Progress.new
     @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
     unless @students_textbook.nil?

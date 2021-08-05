@@ -41,7 +41,9 @@
             <li class= 'progress-list' >
               <span><%= l progress.created_at %>
               <% if current_teacher.id == @teachers_textbook.teacher_id %>
-              <i class="far fa-square fa-lg"></i>
+                <%= link_to students_textbook_students_textbook_progress_reads_path(progress_id: progress.id, textbook_id: @teachers_textbook, students_textbook_id: progress.students_textbook_id), method: :post do %>
+                  <i class="far fa-square fa-lg"></i>
+                <% end %>
               <% end %>
               </span><br>
               P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>

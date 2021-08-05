@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_051647) do
+ActiveRecord::Schema.define(version: 2021_08_05_154822) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -37,11 +37,18 @@ ActiveRecord::Schema.define(version: 2021_05_21_051647) do
     t.integer "progress_page"
     t.text "comment"
     t.bigint "students_textbook_id", null: false
-    t.bigint "teacher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["students_textbook_id"], name: "index_progresses_on_students_textbook_id"
-    t.index ["teacher_id"], name: "index_progresses_on_teacher_id"
+  end
+
+  create_table "reads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "teacher_id", null: false
+    t.bigint "progress_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["progress_id"], name: "index_reads_on_progress_id"
+    t.index ["teacher_id"], name: "index_reads_on_teacher_id"
   end
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -91,7 +98,8 @@ ActiveRecord::Schema.define(version: 2021_05_21_051647) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "progresses", "students_textbooks"
-  add_foreign_key "progresses", "teachers"
+  add_foreign_key "reads", "progresses"
+  add_foreign_key "reads", "teachers"
   add_foreign_key "students_textbooks", "students"
   add_foreign_key "students_textbooks", "textbooks"
   add_foreign_key "textbooks", "teachers"
