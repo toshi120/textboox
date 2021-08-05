@@ -67,7 +67,7 @@
         <% if @progresses != nil %>
           <% @progresses.each do |progress| %>
             <li class= 'progress-list'>
-              <%= l progress.created_at %><br>
+              <span><%= l progress.created_at %><i class="far fa-square fa-lg"></i></span><br>
               P<%= progress.progress_page %> / P<%= @students_textbook.textbook.page %><br>
               <%= progress.comment%>
             </li>

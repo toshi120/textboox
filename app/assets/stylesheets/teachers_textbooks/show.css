@@ -325,3 +325,7 @@ section {
 .hidden {
   display: none;
 }
+
+.fa-square {
+  margin-left: 10px;
+}

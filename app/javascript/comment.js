@@ -18,6 +18,7 @@ for (let indexNum = 0; indexNum < pullDownNames.length; indexNum++) {
 }
 
 
+
 }
 
 window.addEventListener('load', commentDisplay)
