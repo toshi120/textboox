@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(version: 2021_05_21_051647) do
     t.integer "progress_page"
     t.text "comment"
     t.bigint "students_textbook_id", null: false
+    t.bigint "teacher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["students_textbook_id"], name: "index_progresses_on_students_textbook_id"
+    t.index ["teacher_id"], name: "index_progresses_on_teacher_id"
   end
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,6 +91,7 @@ ActiveRecord::Schema.define(version: 2021_05_21_051647) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "progresses", "students_textbooks"
+  add_foreign_key "progresses", "teachers"
   add_foreign_key "students_textbooks", "students"
   add_foreign_key "students_textbooks", "textbooks"
   add_foreign_key "textbooks", "teachers"

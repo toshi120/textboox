@@ -4,6 +4,7 @@ class CreateProgresses < ActiveRecord::Migration[6.0]
       t.integer     :progress_page
       t.text        :comment
       t.references  :students_textbook,  null: false, foreign_key: true
+      t.references :teacher,    foreign_key: true
       t.timestamps
     end
   end
