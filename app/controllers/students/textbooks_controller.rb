@@ -1,13 +1,13 @@
 class Students::TextbooksController < Students::ApplicationController
   before_action :set_textbook, only: [:show]
 
+
   def index
     @textbooks = Textbook.all.order('created_at DESC')
   end
 
   def show
-    @read_progress = Read.where(teacher_id: current_teacher.id)
-    @progress = Progress.new
+    @new_progress = Progress.new
     @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
     unless @students_textbook.nil?
       @progresses = Progress.where(students_textbook_id: @students_textbook.id).order('created_at DESC')
@@ -22,6 +22,7 @@ class Students::TextbooksController < Students::ApplicationController
   end
 
   private
+
 
   def set_textbook
     @textbook = Textbook.find(params[:id])

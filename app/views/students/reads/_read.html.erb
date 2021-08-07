@@ -1,0 +1,11 @@
+<% if current_teacher.id == @teachers_textbook.teacher_id && @read == nil %>
+  <%= link_to students_textbook_students_textbook_progress_reads_path(progress_id: progress.id, textbook_id: @teachers_textbook, students_textbook_id: progress.students_textbook_id), id: :"check-in-btn-#{progress.id}", method: :post, remote: true do %>
+    <i class="far fa-square fa-lg"></i>
+  <% end %>
+
+<% elsif @read != nil %>
+  <%= link_to students_textbook_students_textbook_progress_read_path(progress_id: progress.id, textbook_id: @teachers_textbook, students_textbook_id: progress.students_textbook_id), method: :delete, remote: true, id: :"check-in-btn-#{progress.id}" do %>
+    <i class="far fa-check-square fa-lg"></i>
+  <% end %>
+
+<% end %>

@@ -326,6 +326,7 @@ section {
   display: none;
 }
 
-.fa-square {
+.fa-square,
+.fa-check-square {
   margin-left: 10px;
 }

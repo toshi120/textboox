@@ -36,7 +36,7 @@
           進捗を記録する
         </div>
       </section>
-      <%= form_with(model: [:students, @progress], url: students_textbook_students_textbook_progresses_path(@textbook, @students_textbook), method: :post, local: true, class: "progress-form") do |f| %>
+      <%= form_with(model: [:students, @new_progress], url: students_textbook_students_textbook_progresses_path(@textbook, @students_textbook), method: :post, local: true, class: "progress-form") do |f| %>
       <%= render 'students/shared/error_messages', model: f.object %>
         <div class="progress-form-box hidden">
           <div class="new-progress">
@@ -66,11 +66,13 @@
       <ul class = 'progresses-list' >
         <% if @progresses != nil %>
           <% @progresses.each do |progress| %>
+           <% @read_progress = Read.where(progress_id: progress.id) %>
             <li class= 'progress-list'>
               <span><%= l progress.created_at %>
               <% if @read_progress.exists? %>
-                <i class="fas fa-check-circle fa-lg"></i></span><br>
+                <i class="fas fa-check-circle fa-lg"></i>
               <% end %>
+              </span><br>
               P<%= progress.progress_page %> / P<%= @students_textbook.textbook.page %><br>
               <%= progress.comment%>
             </li>

@@ -1,14 +1,12 @@
 class Students::ProgressesController < Students::ApplicationController
   before_action :set_textbook
 
-  def new
-    @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
-    @progress = Progress.new
-  end
+
+
 
   def create
-    @progress = Progress.new(progress_params)
-    if @progress.save
+    @new_progress = Progress.new(progress_params)
+    if @new_progress.save
       redirect_to students_textbook_path(@textbook)
     else
       @students_textbook = StudentsTextbook.where(student_id: current_student.id).find_by(textbook_id: @textbook.id)
@@ -25,6 +23,8 @@ class Students::ProgressesController < Students::ApplicationController
   end
 
   private
+
+
 
   def set_textbook
     @textbook = Textbook.find(params[:textbook_id])
