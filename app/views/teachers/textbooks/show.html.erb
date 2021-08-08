@@ -42,7 +42,7 @@
             <li class= 'progress-list' >
               <span><%= l progress.created_at %>
                 <span id ='check-in-btn-<%= progress.id %>'>
-                  <%= render 'students/reads/read', progress: progress %>
+                  <%= render 'teachers/reads/read', progress: progress %>
                 </span>
               </span><br>
               P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>

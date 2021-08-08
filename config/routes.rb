@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   end
 
   namespace :teachers do
-    resources :textbooks
+    resources :textbooks do
+      resources :reads, only: [:create, :destroy]
+    end
  
   end
   
