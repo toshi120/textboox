@@ -1,0 +1,33 @@
+<div class="progresses-box">
+  <h2 class ="studying-students-list">学習中生徒一覧</h2>
+    <div>
+      <%= form_with(url: search_teachers_textbooks_path, method: :get, class: "student-search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "生徒を検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+    </div>
+  <div id='studying-students-name'>
+    <% n = 0 %>
+    <% @studying_students.length.times do %>
+      <div class="student_name" >
+        <%= @studying_students[n].name %> 
+      </div>      
+        <ul class = "progresses-list hidden" >
+          <% @progresses = Progress.where(students_textbook_id: @studying_students[n].id).order('created_at DESC') %>
+          <% @progresses.each do |progress| %>
+            <% @read = Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id) %>
+            <li class= 'progress-list' >
+              <span><%= l progress.created_at %>
+                <span id ='check-in-btn-<%= progress.id %>'>
+                  <%= render 'teachers/reads/read', progress: progress %>
+                </span>
+              </span><br>
+              P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>
+              <%= progress.comment%>
+            </li>
+          <% end %> 
+        </ul> 
+      <% n += 1 %>
+    <% end %>
+  </div>
+</div>

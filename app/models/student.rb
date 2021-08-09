@@ -14,4 +14,13 @@ class Student < ApplicationRecord
       student.name = '生徒用ゲストユーザー'
     end
   end
+
+  def self.search(search)
+    if search != ""
+      Student.where('name LIKE(?)', "%#{search}%")
+    else
+      Student.all
+    end
+  end
+
 end

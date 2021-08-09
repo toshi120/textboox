@@ -1,12 +1,19 @@
 class Teachers::TextbooksController < Teachers::ApplicationController
-  before_action :set_teachers_textbook, only: %i[show edit update destroy]
+  before_action :set_teachers_textbook, only: %i[show edit update destroy search]
 
   def index
     @teachers_textbooks = Textbook.all.order('created_at DESC')
   end
 
   def show
+    @students_textbook = StudentsTextbook.where(textbook_id: @teachers_textbook.id)
     @studying_students = StudentsTextbook.where(textbook_id: @teachers_textbook.id)
+    n = 0
+    @students = []
+    @studying_students.length.times do
+      @students << @studying_students[n].student
+      n += 1
+    end
   end
 
   def new
@@ -50,10 +57,35 @@ class Teachers::TextbooksController < Teachers::ApplicationController
     end
   end
 
+
+  def search
+    @students_textbook = StudentsTextbook.where(textbook_id: @teachers_textbook.id)
+    @students = Student.search(params[:keyword])
+    @studying_students = []
+    
+    y = 0
+    @students_id = []
+    @students.length.times do
+      @students_id << @students[y].id
+      y += 1
+    end
+  
+
+
+    @students_textbook.each do | x |
+      if @students_id.include?(x.student.id)
+        @studying_students << x
+      end
+    end
+    binding.pry
+
+  end
+
   private
 
   def set_teachers_textbook
     @teachers_textbook = Textbook.find(params[:id])
+    
   end
 
   def teachers_textbook_params

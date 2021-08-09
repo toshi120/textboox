@@ -31,7 +31,7 @@
   <div class="progresses-box">
     <h2 class ="studying-students-list">学習中生徒一覧</h2>
       <div>
-        <%= form_with(url: search_teachers_textbook_path(@teachers_textbook.id), remote: true, method: :get, class: "student-search-form") do |form| %>
+        <%= form_with(url: search_teachers_textbook_path(@teachers_textbook.id), local: true, method: :get, class: "student-search-form") do |form| %>
           <%= form.text_field :keyword, placeholder: "生徒を検索する", class: "search-input" %>
           <%= form.submit "検索", class: "search-btn" %>
         <% end %>

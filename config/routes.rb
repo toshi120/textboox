@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   namespace :teachers do
     resources :textbooks do
+      member do
+        get "search"
+      end
       resources :reads, only: [:create, :destroy]
     end
  
