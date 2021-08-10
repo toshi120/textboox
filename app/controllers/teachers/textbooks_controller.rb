@@ -77,7 +77,6 @@ class Teachers::TextbooksController < Teachers::ApplicationController
         @studying_students << x
       end
     end
-    binding.pry
 
   end
 
