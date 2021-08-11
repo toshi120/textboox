@@ -57,8 +57,8 @@ jobs:
 
     - run:
         name: test
-        command: docker-compose exec web sh -c 'bundle exec rspec'
-
+        command: bundle exec rspec
+ 
 #     steps:
 # # テストを実行
 #       - checkout
