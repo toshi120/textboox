@@ -17,6 +17,9 @@ jobs:
       - run:
           name: restart
           command: docker-compose up -d
+      # Database setup
+      - run: docker-compose exec web sh -c 'bundle exec rake db:create'
+      - run: docker-compose exec web sh -c 'bundle exec rake db:schema:load'
       - run:
           name: test
           command: docker-compose exec web sh -c 'bundle exec rspec'
