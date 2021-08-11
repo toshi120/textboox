@@ -13,7 +13,7 @@ jobs:
         environment:
           DB_HOST: 127.0.0.1
           RAILS_ENV: test
-      - image: circleci/mysql:5.7.35
+      - image: circleci/mysql:5.7.30
         # auth:
         #   username: mydockerhub-user
         #   password: password

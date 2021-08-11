@@ -3,7 +3,7 @@ test:
   encoding: utf8
   pool: 5
   username: 'root'
-  password: 'password'
+  password: 'rootpw'
   port: 3306
   host: '127.0.0.1'
-  database: circle_test
+  database: test_db
