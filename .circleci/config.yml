@@ -19,7 +19,7 @@ jobs:
           command: docker-compose up -d
       - run:
           name: test
-          command: docker-compose exec app sh -c ‘cd textboox && bundle exec rspec’
+          command: docker-compose exec web sh -c ‘cd textboox && bundle exec rspec’
       - run:
           name: docker-compose down
           command: docker-compose down
