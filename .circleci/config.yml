@@ -3,9 +3,13 @@ version: 2
 # jobsの設定（実際に実行するコマンド郡）
 jobs:
   build:
-    machine:
-      image: circleci/classic:edge
+    # machine:
+    #   image: circleci/classic:edge
     docker:
+      - image: circleci/ruby:2.7.2
+        environment:
+          DB_HOST: 127.0.0.1
+          RAILS_ENV: test
       - image: circleci/mysql:5.7.35
         environment:
           MYSQL_USER: root
