@@ -71,7 +71,6 @@ class Teachers::TextbooksController < Teachers::ApplicationController
     end
   
 
-
     @students_textbook.each do | x |
       if @students_id.include?(x.student.id)
         @studying_students << x
