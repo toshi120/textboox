@@ -55,9 +55,9 @@ jobs:
            bundle exec rake db:create
            bundle exec rake db:schema:load
 
-      - run:
-          name: test
-          command: docker-compose exec web sh -c 'bundle exec rspec'
+    - run:
+        name: test
+        command: docker-compose exec web sh -c 'bundle exec rspec'
 
 #     steps:
 # # テストを実行
