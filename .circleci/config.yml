@@ -1,0 +1,68 @@
+# circleCIのバージョン指定
+version: 2
+# jobsの設定（実際に実行するコマンド郡）
+jobs:
+  build:
+    machine:
+      image: circleci/classic:edge
+    steps:
+# テストを実行
+      - checkout
+      - run:
+          name: docker-compose build
+          command: docker-compose build
+      # - run:
+      #     name: create network
+      #     command: docker network create textboox-network
+      - run:
+          name: restart
+          command: docker-compose up -d
+      - run:
+          name: test
+          command: docker-compose exec app sh -c ‘cd textboox && bundle exec rspec’
+      - run:
+          name: docker-compose down
+          command: docker-compose down
+# EC2にSSH接続し、デプロイを実行
+  deploy:
+    machine:
+      image: circleci/classic:edge
+    steps:
+      - checkout
+      # CircleCIに登録した秘密鍵を呼び出す。
+      - add_ssh_keys
+      - run:
+          ssh ${USER_NAME}@${HOST_NAME} ‘cd textboox && sudo git pull origin master && docker-compose restart’
+
+
+# 定義したjobsをどう動かすか設定する
+# テストが成功した場合のみ、deployを実行するようにします。
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+      # CircleCI上で設定した環境変数を呼び出し
+          context: textboox
+          requires:
+            - build
+          # masterブランチがpushされた場合のみdeployするようにする。
+          filters:
+            branches:
+              only: master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
