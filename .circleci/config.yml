@@ -7,16 +7,16 @@ jobs:
     #   image: circleci/classic:edge
     docker:
       - image: circleci/ruby:2.7.2
-        auth:
-          username: mydockerhub-user
-          password: password
+        # auth:
+        #   username: mydockerhub-user
+          # password: password
         environment:
           DB_HOST: 127.0.0.1
           RAILS_ENV: test
-      - image: circleci/mysql:8.0.4
-        auth:
-          username: mydockerhub-user
-          password: password
+      - image: circleci/mysql:5.7.35
+        # auth:
+        #   username: mydockerhub-user
+        #   password: password
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
           MYSQL_DATABASE: test_db
