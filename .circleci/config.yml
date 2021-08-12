@@ -102,7 +102,6 @@ jobs:
       - run:
           ssh ${USER_NAME}@${HOST_NAME} 'cd textboox && sudo git pull origin master && docker-compose restart'
 
-
 # 定義したjobsをどう動かすか設定する
 # テストが成功した場合のみ、deployを実行するようにします。
 workflows:
