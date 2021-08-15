@@ -59,38 +59,7 @@ jobs:
         name: test
         command: bundle exec rspec
  
-#     steps:
-# # テストを実行
-#       - checkout
-#       - run:
-#       # Our primary container isn’t MYSQL so run a sleep command until it’s ready.
-#           name: MySQL が準備できるまで待機
-#           command: |
-#             for i in `seq 1 10`;
-#             do
-#               nc -z 127.0.0.1 3306 && echo Success && exit 0
-#               echo -n .
-#               sleep 1
-#             done
-#             echo Failed waiting for MySQL && exit 1
-#       - run:
-#           name: docker-compose build
-#           command: docker-compose build
-#       # - run:
-#       #     name: create network
-#       #     command: docker network create textboox-network
-#       - run:
-#           name: restart
-#           command: docker-compose up -d
-#       # Database setup
-#       - run: docker-compose exec web sh -c 'bundle exec rake db:create'
-#       - run: docker-compose exec web sh -c 'bundle exec rake db:schema:load'
-      # - run:
-      #     name: test
-      #     command: docker-compose exec web sh -c 'bundle exec rspec'
-#       - run:
-#           name: docker-compose down
-#           command: docker-compose down
+
 # EC2にSSH接続し、デプロイを実行
   deploy:
     machine:
@@ -100,7 +69,8 @@ jobs:
       # CircleCIに登録した秘密鍵を呼び出す。
       - add_ssh_keys
       - run:
-          ssh ${USER_NAME}@${HOST_NAME} 'cd textboox && sudo git pull origin master && docker-compose restart'
+          # ssh ${USER_NAME}@${HOST_NAME} 'cd textboox && sudo git pull origin master && docker-compose restart'
+          command: ssh ${USER_NAME}@${HOST_NAME} 'cd textboox && sudo git pull origin 本番環境docker,CircleCI導入 && docker-compose down && docker-compose build && docker-compose up -d'
 
 # 定義したjobsをどう動かすか設定する
 # テストが成功した場合のみ、deployを実行するようにします。
@@ -117,7 +87,7 @@ workflows:
           # masterブランチがpushされた場合のみdeployするようにする。
           filters:
             branches:
-              only: master
+              only: 本番環境docker,CircleCI導入
 
 
 
