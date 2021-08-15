@@ -28,9 +28,9 @@ COPY Gemfile ${APP_ROOT}
 COPY Gemfile.lock ${APP_ROOT}
 RUN gem install -N rails
 # RUN bundle install
-RUN bundle exec rails assets:precompile RAILS_ENV=production \
-  && yarn cache clean \
-  && rm -rf node_modules tmp/cache
+# RUN bundle exec rails assets:precompile RAILS_ENV=production \
+#   && yarn cache clean \
+#   && rm -rf node_modules tmp/cache
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
