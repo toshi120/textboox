@@ -9,7 +9,7 @@ class Teacher < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
 
   def self.teachers_guest
-    Teacher.find_or_create_by!(email: 'teacher_guest@example.com') do |teacher|
+    find_or_create_by!(email: 'teacher_guest@example.com') do |teacher|
       teacher.password = 'guestteacher123'
       teacher.name = '先生用ゲストユーザー'
     end
