@@ -25,7 +25,6 @@ jobs:
 
       # working_directory: ~/textboox  #自身のアプリディレクトリ名を設定  
 
-
     steps:
     - checkout
 
