@@ -251,6 +251,10 @@
   width: 70%;
 }
 
+.alert-progress {
+  width: 30%;
+}
+
 .student-search-form{
   width: 37vw;
   margin: 10px 0 20px 0;
