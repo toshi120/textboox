@@ -1,11 +1,13 @@
 <div id='studying-students-name'>
   <% n = 0 %>
   <% @studying_students.length.times do %>
-    <div class="student_name" >
-    <div>
-      <i class="fas fa-circle"></i>
-    </div>
-      <%= @studying_students[n].student.name %> 
+    <div classa="student_namecontainer">
+      <div>
+        <i class="fas fa-circle"></i>
+      </div>
+      <div class="student_name" >
+        <%= @studying_students[n].student.name %> 
+      </div>
     </div>      
       <ul class = "progresses-list hidden" >
         <% @progresses = Progress.where(students_textbook_id: @students_textbook[n].id).order('created_at DESC') %>

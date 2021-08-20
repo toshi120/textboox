@@ -234,6 +234,10 @@
   overflow-wrap: break-word;
 }
 
+.student_namecontainer {
+  display: flex;
+}
+
 .student_name {
   color: black;
   position:relative;
