@@ -234,7 +234,7 @@
   overflow-wrap: break-word;
 }
 
-.student_namecontainer {
+.student-namecontainer {
   display: flex;
   width: 37vw;
 }
