@@ -253,6 +253,13 @@
 
 .alert-progress {
   width: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-circle {
+  color: #FF9900;
 }
 
 .student-search-form{
