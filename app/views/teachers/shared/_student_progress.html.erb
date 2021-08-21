@@ -5,15 +5,15 @@
     <% @progresses = Progress.where(students_textbook_id: @students_textbook[n].id).order('created_at DESC') %>
     <% @progresses.each do |progress| %>
       <% @read = Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id) %>
-    <div class="student-name-container">
-      <div class="alert-progress">
-        <i class="fas fa-circle"></i>
-      </div>
-      <div class="student_name" >
-        <%= @studying_students[n].student.name %> 
-      </div>
-    </div>      
-      <ul class = "progresses-list hidden" >
+      <div class="student-name-container">
+        <div class="alert-progress">
+          <i class="fas fa-circle"></i>
+        </div>
+        <div class="student_name" >
+          <%= @studying_students[n].student.name %> 
+        </div>
+      </div>      
+        <ul class = "progresses-list hidden" >
         
         
           
@@ -26,8 +26,9 @@
             P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>
             <%= progress.comment%>
           </li>
-        <% end %> 
+         
       </ul> 
+    <% end %>
     <% n += 1 %>
   <% end %>
 </div>
