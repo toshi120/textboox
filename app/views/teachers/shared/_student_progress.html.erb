@@ -4,18 +4,8 @@
   <% @studying_students.length.times do %>
     <div class="student-name-container">
       <div class="alert-progress">
-        <% @progresses = Progress.where(students_textbook_id: @students_textbook[n].id).order('created_at DESC') %>
-        <% if @progresses != nil%>
-          <% progressid_array = [] %>
-          <% read_array = [] %>
-          <% @progresses.each do |progress| %>
-            <% progressid_array << progress.id%>
-            <% read_array << Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id).progress.id %>
-          <% end %>
-          <% unless progressid_array.all?{|v| read_array.include?(v)} %>
-            <i class="fas fa-circle"></i>
-          <% end %>
-        <% end %>
+      
+        <i class="fas fa-circle"></i>
       </div>
       <div class="student_name" >
         <%= @studying_students[n].student.name %> 
