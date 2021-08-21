@@ -248,7 +248,7 @@
   margin-bottom: 4px;
   /* border-left : solid 35px #5c9ee7;先の色＝アイコン裏の色 */
   list-style-type: none!important;
-  width: 70%;
+  width: 100%;
 }
 
 .alert-progress {

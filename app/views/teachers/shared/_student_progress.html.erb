@@ -2,6 +2,9 @@
 
   <% n = 0 %>
   <% @studying_students.length.times do %>
+    <% @progresses = Progress.where(students_textbook_id: @students_textbook[n].id).order('created_at DESC') %>
+    <% @progresses.each do |progress| %>
+      <% @read = Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id) %>
     <div class="student-name-container">
       <div class="alert-progress">
         <i class="fas fa-circle"></i>
@@ -11,9 +14,9 @@
       </div>
     </div>      
       <ul class = "progresses-list hidden" >
-        <% @progresses = Progress.where(students_textbook_id: @students_textbook[n].id).order('created_at DESC') %>
-        <% @progresses.each do |progress| %>
-          <% @read = Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id) %>
+        
+        
+          
           <li class= 'progress-list' >
             <span><%= l progress.created_at %>
               <span id ='check-in-btn-<%= progress.id %>'>
