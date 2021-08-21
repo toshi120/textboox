@@ -4,13 +4,23 @@
   <% @studying_students.length.times do %>
     <div class="student-name-container">
       <div class="alert-progress">
-      
-        <i class="fas fa-circle"></i>
+        <% @progresses = Progress.where(students_textbook_id: @students_textbook[n].id).order('created_at DESC') %>
+        <% if @progresses != nil%>
+          <% progressid_array = [] %>
+          <% read_array = [] %>
+          <% @progresses.each do |progress| %>
+            <% progressid_array << progress.id%>
+            <% read_array << Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id).progress.id %>
+          <% end %>
+          <% unless progressid_array.all?{|v| read_array.include?(v)} %>
+            <i class="fas fa-circle"></i>
+          <% end %>
+        <% end %>
       </div>
       <div class="student_name" >
-        <%= @studying_students[n].student.name %> 
+        <%= @studying_students[n].student.name %>
       </div>
-    </div>      
+    </div>
       <ul class = "progresses-list hidden" >
         <% @progresses = Progress.where(students_textbook_id: @students_textbook[n].id).order('created_at DESC') %>
         <% @progresses.each do |progress| %>
@@ -24,8 +34,8 @@
             P<%= progress.progress_page %> / P<%= @teachers_textbook.page %><br>
             <%= progress.comment%>
           </li>
-        <% end %> 
-      </ul> 
+        <% end %>
+      </ul>
     <% n += 1 %>
   <% end %>
 </div>
