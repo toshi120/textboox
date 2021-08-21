@@ -10,7 +10,7 @@
           <% read_array = [] %>
           <% @progresses.each do |progress| %>
             <% progressid_array << progress.id%>
-            <% if Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id).progress.id != nil %>
+            <% if Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id) != nil %>
               <% read_array << Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id).progress.id %>
             <% end %>
           <% end %>
