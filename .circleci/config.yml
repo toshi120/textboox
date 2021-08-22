@@ -69,7 +69,7 @@ jobs:
       - add_ssh_keys
       - run:
           # ssh ${USER_NAME}@${HOST_NAME} 'cd textboox && sudo git pull origin master && docker-compose restart'
-          command: ssh ${USER_NAME}@${HOST_NAME} 'cd textboox && sudo git pull origin master && docker image prune -f && docker-compose down --remove-orphans && docker-compose build && docker-compose -f docker-compose.yml -f docker-compose.production.yml up '
+          command: ssh ${USER_NAME}@${HOST_NAME} 'cd textboox && sudo git pull origin master && docker image prune -f && docker-compose down --remove-orphans && docker-compose build && docker-compose -f docker-compose.yml -f docker-compose.production.yml up -d '
 
 # 定義したjobsをどう動かすか設定する
 # テストが成功した場合のみ、deployを実行するようにします。
