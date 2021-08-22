@@ -5,6 +5,7 @@
     <div class="student-name-container">
       <div class="alert-progress">
         <% @progresses = Progress.where(students_textbook_id: @students_textbook[n].id).order('created_at DESC') %>
+        <%# <% binding.pry  %>
         <% if @progresses != nil%>
           <% progressid_array = [] %>
           <% read_array = [] %>
