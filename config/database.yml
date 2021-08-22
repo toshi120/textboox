@@ -52,6 +52,6 @@ production:
   <<: *default
   database: textboox_production
   username: root
-  password: password
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
   # host: localhost
