@@ -1,11 +1,11 @@
-version: '3'
+version: "3"
 services:
   web:
     build:
       context: .
       dockerfile: Dockerfile
-    command: dockerize -wait tcp://db:3306 -timeout 20s unicorn_rails -c config/unicorn.rb -E production
-    tty: true #pry-byebugを使えるようにする
+    command: sh -c "rm -f tmp/pids/server.pid && rails s -p 3000 -b '0.0.0.0' "
+    tty: true
     stdin_open: true
     depends_on:
       - db
@@ -13,35 +13,21 @@ services:
       - "3000:3000"
     volumes:
       - .:/myapp:cached
-      #ソケット通信用ファイルをnginxコンテナと共有
-      - tmp-data:/myapp/tmp/sockets
-      #画像データとかをnginxと共有
-      - public-data:/myapp/public
+      - gem_data:/usr/local/bundle
+
   db:
     image: mysql:5.7
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     ports:
-      - '3306:3306'
+      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
       # MYSQL_USER: root
-      MYSQL_PASSWORD: password
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
     #dbのデータを永続化しておく
     volumes:
       - mysql-data:/var/lib/mysql
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    ports:
-      - 80:80
-    restart: always #明示的にstopさせるまでリスタートする。（失敗するたび遅延あり）
-    volumes:
-      - tmp-data:/myapp/tmp/sockets
-      - public-data:/myapp/public
-    depends_on:
-      - web
+
 volumes:
-  public-data:
-  tmp-data:
   mysql-data:
+  gem_data:
