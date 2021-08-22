@@ -63,6 +63,7 @@ class Teachers::TextbooksController < Teachers::ApplicationController
     @students = Student.search(params[:keyword])
     @studying_students = []
     
+    
     y = 0
     @students_id = []
     @students.length.times do

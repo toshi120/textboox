@@ -15,8 +15,10 @@
               <% read_array << Read.where(teacher_id: current_teacher.id).find_by(progress_id: progress.id).progress.id %>
             <% end %>
           <% end %>
-          <% unless progressid_array.all?{|v| read_array.include?(v)} %>
-            <i class="fas fa-circle"></i>
+          <% if current_teacher == @teachers_textbook.teacher%>
+            <% unless progressid_array.all?{|v| read_array.include?(v)} %>
+              <i class="fas fa-circle"></i>
+            <% end %>
           <% end %>
         <% end %>
       </div>
