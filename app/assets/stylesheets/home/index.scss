@@ -1,3 +1,4 @@
+
 .main {
   height: 100%;
   width: 100%;
@@ -8,13 +9,15 @@
   background-color: orange;
 }
 
+img.textboox-logo {
+  width: 30%;
+}
+
 .head-title-student {
-  height: 90px;
   background-color: #67c5ff;
 }
 
 .head-title-teacher {
-  height: 90px;
   background-color: #FF97C2;
 }
 
@@ -149,3 +152,35 @@
   width: 100%;
 }
 
+.fa-book-open {
+  font-size: 6em;
+}
+
+@media screen and (max-width: 480px) {
+  .first-view {
+    width: 100%;
+    height:auto;
+  }
+  
+  .top-image {
+    width: 100%;
+  }
+
+  .fa-book-open {
+    font-size: 3em;
+  }
+  
+  .new-textbook-btn {
+    bottom: 25px;
+    right: 5px;
+    position: fixed;
+    padding: 15px;
+    text-align: center;
+  }
+
+  h5.new-textbook-post {
+    font-size: 10px;
+  }
+
+
+}
