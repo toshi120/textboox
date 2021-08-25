@@ -240,7 +240,7 @@
 }
 
 .student_name {
-  color: black;
+  color: red;
   position:relative;
   background: #D7EEFF;/*バーの色*/
   line-height: 1.5;
