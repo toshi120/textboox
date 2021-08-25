@@ -24,7 +24,7 @@
 .textbook-lists {
   width: 100vw;
   display: flex;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -71,6 +71,14 @@ li {
 }
 
 @media screen and (max-width: 480px) {
+
+  .textbook-lists>.list {
+    width: 28vh;
+    padding: 1vw;
+    background-color: #FFF;
+  }
+  
+
   .textbook-contents > .title {
     font-size: 3vh;
     line-height: 1.4;
@@ -81,5 +89,33 @@ li {
   .textbook-img {
     width: 47vw;
     height: 25vh;
+  }
+
+  .textbook-lists {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .textbook-teacher-name {
+  width: 47vw;
+  }
+
+  .textbook-name {
+    font-size: 2vh;
+    width: 47vw;
+  }
+
+  .textbook-info {
+    background-color: #FFF;
+    color: black;
+    padding: 1vw;
+    width: 47vw;
+  }
+
+  .textbook-img-content {
+    position: relative;
+    width: 47vw;
   }
 }
