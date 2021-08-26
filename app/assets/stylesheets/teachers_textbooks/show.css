@@ -367,6 +367,54 @@ section {
 
 
 @media screen and (max-width: 480px) {
+  .textbook-show {
+    display: block;
+  }
+
+  .textbook-img-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textbook-box {
+    width: 100%
+  }
+
+  .textbook-box-img {
+    width: 80vw;
+    min-height: 45vh;
+  }
+
+  .progresses-box,
+  .progress-form {
+    width: 100%;
+  }
+
+  .student-search-form {
+    width: 80vw;
+  }
+
+  .student-name-container {
+    width: 95vw;
+  }
+
+  .progresses-list, .progress-text {
+    width: 95vw;
+  }
+
+  .item-destroy,
+  .item-red-btn {
+    width: 80%;
+    font-size: 17px;
+  }
+
+  .textbook-page-box {
+    width: 100%;
+  }
+
+
+
 
 
 }

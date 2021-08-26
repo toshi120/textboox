@@ -35,12 +35,10 @@
 }
 
 
-.textbook-img-content {
-  position: relative;
-}
+
 
 .textbook-img {
-  width: 33vh;
+  width: 20vw;
   height: 33vh;
 }
 
@@ -50,10 +48,12 @@
   background-color: #FFF;
   color: black;
   padding: 1vw;
+  width: 20vw;
 }
 
 .textbook-name {
   font-size: 2.5vh;
+  width: 19vw;
 }
 
 .textbook-pages {
@@ -64,6 +64,7 @@
 
 .textbook-teacher-name {
   color: black;
+  width:20vw;
 }
 
 li {
@@ -87,8 +88,8 @@ li {
   }
 
   .textbook-img {
-    width: 47vw;
-    height: 25vh;
+    width: 30vw;
+    height: 15vh;
   }
 
   .textbook-lists {
@@ -99,23 +100,31 @@ li {
   }
 
   .textbook-teacher-name {
-  width: 47vw;
+  width: 30vw;
   }
 
   .textbook-name {
     font-size: 2vh;
-    width: 47vw;
+    width: 29vw;
   }
 
   .textbook-info {
     background-color: #FFF;
     color: black;
     padding: 1vw;
-    width: 47vw;
+    width: 30vw;
   }
 
   .textbook-img-content {
-    position: relative;
-    width: 47vw;
+    width: 30vw;
+
   }
+
+  .registered-text {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: bold;
+    padding-top: 30px;
+  }
+
 }
