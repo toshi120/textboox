@@ -3,7 +3,7 @@
     <h2 class = 'registered-text'><%= @name %>さんの学習中テキスト</h2>
     <ul class= 'textbook-lists'>
     <% @my_textbooks.each do |my_textbook| %>
-      <li class='list'>
+      <li class='box22'>
         <%= link_to [:students, my_textbook.textbook] do %>
           <div class='textbook-img-content'>
             <%= image_tag my_textbook.textbook.image, class: "textbook-img" %>

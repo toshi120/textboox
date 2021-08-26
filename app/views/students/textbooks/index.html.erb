@@ -6,7 +6,7 @@
     <h2 class='title'>テキスト一覧</h2>
     <ul class='textbook-lists'>
       <% @textbooks.each do |textbook| %>
-      <li class='list'>
+      <li class='box22'>
         <%= link_to [:students, textbook] do %>
         <div class="textbook-teacher-name">
           <%= textbook.teacher.name %>先生担当
