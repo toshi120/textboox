@@ -1,7 +1,5 @@
 FROM ruby:2.7.2-alpine3.12
 
-ENV RAILS_ENV="production"
-
 ENV DOCKERIZE_VERSION v0.6.1
 ENV APP_ROOT /myapp
 ENV LANG=C.UTF-8 \
