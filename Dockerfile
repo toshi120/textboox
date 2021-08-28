@@ -28,7 +28,7 @@ COPY Gemfile ${APP_ROOT}
 COPY Gemfile.lock ${APP_ROOT}
 RUN gem install -N rails
 RUN bundle install
-RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile \
+RUN bundle exec rails assets:precompile \
   && yarn cache clean \
   && rm -rf node_modules tmp/cache
 # Add a script to be executed every time the container starts.
