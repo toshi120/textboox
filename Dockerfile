@@ -1,4 +1,7 @@
 FROM ruby:2.7.2-alpine3.12
+
+ENV RAILS_ENV="production"
+
 ENV DOCKERIZE_VERSION v0.6.1
 ENV APP_ROOT /myapp
 ENV LANG=C.UTF-8 \
@@ -28,8 +31,7 @@ COPY Gemfile ${APP_ROOT}
 COPY Gemfile.lock ${APP_ROOT}
 RUN gem install -N rails
 RUN bundle install
-RUN bundle exec rails assets:precompile RAILS_ENV=production \
-  && yarn cache clean \
+RUN yarn cache clean \
   && rm -rf node_modules tmp/cache
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
